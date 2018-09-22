@@ -1,0 +1,13 @@
+# Basic Operation System commands
+cd # to enter in a directory (Folder)
+ls # or dir to list files
+
+rm # delete
+rm -rf # delete recursive
+
+
+
+# GIT
+git add .  # add updated files
+git commit # little description of the Updates
+git push   # send to the repo
