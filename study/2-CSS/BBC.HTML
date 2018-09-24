@@ -41,7 +41,6 @@
             border-left:1px #CCCCCC solid;
             height: 100%;
 
-
         }
 
         #man-icon{
@@ -72,7 +71,8 @@
         #bell {
 
           height: 25px;
-          margin: 8px 8px;
+          margin: 8px 8px 0;
+
 
         }
 
@@ -91,6 +91,133 @@
 
         }
 
+        #arrow {
+
+          float: right;
+          width:13px
+          margin-left:20px
+
+        }
+
+        #searchbox{
+
+          background-color: #E4E4E4;
+          border: none;
+          font-weight: bold;
+          font-size: 14px;
+          padding: 5px;
+          margin: 5px 0 5px 5px;
+          float: left;
+
+        }
+
+        #glass {
+
+          height: 26px;
+          margin-top: 5px
+
+        }
+
+        .clear {
+
+          clear:both;
+
+        }
+
+        #menu-bar-container{
+
+          border-top: 1px solid #CCCCCC;
+          background-color:#BC181D;
+          width:100%;
+          height:70px
+
+        }
+
+        #menu-bar{
+
+          width:1000px;
+          margin:0 auto;
+
+        }
+
+        h1 {
+
+          padding:0;
+          margin:0;
+          color:white;
+          font-size: 40px;
+          font-weight: normal;
+          padding-top: 10px;
+          float:left;
+
+        }
+
+        #find-box-all{
+
+          border: 1px solid gray;
+          float: right;
+          padding: 5px 5px 0 10px;
+          margin: 10px 10px 0 0;
+
+
+        }
+
+        #find-box-all a {
+
+          color:white;
+          text-decoration: none;
+          font-size: 26px;
+          position: relative;
+          top: -12px;
+
+        }
+
+        #find-box-all a:hover {
+
+          color:white;
+          text-decoration:underline;
+          position: relative;
+
+        }
+
+      #find-box-all img {
+
+        top: -20px;
+
+       }
+
+       #menu-bar-2-container{
+
+         background-color: #A91717;
+         width:100%
+
+       }
+
+       #menu-bar-2{
+
+         width: 1000px;
+         margin: 0 auto;
+         height: 40px;
+
+       }
+
+       #menu-bar-2 a {
+
+         color:white;
+         text-decoration: none;
+         padding: 0 10px;
+         border-right: 1px solid #BB4545;
+         font-size: 15px;
+         position: relative;
+         top: 9px;
+
+       }
+
+       #menu-bar-2 a:hover {
+
+         text-decoration: underline;
+
+}
       </style>
 
   </head>
@@ -151,12 +278,72 @@
 
               More
 
-              <img src="images/arrow.png">
+              <img id="arrow"src="images/arrow.png">
+
+          </div>
+
+          <div class="topbar-section">
+
+            <input id="searchbox" type="text" value="search">
+
+            <input type="image" id="glass" src="images/glass.png">
 
           </div>
 
       </div>
 
+      <div class="clear"></div>
+
+      <div id="menu-bar-container">
+
+        <div id="menu-bar">
+
+            <h1>NEWS</h1>
+
+            <div id="find-box-all">
+
+              <a href="google.com">Find local news</a>
+
+              <img src="images/find.png">
+
+            </div>
+
+        </div>
+
+        <div class="clear"></div>
+
+        <div id="menu-bar-2-container">
+
+          <div id="menu-bar-2">
+
+            <a href="">Home</a>
+
+            <a href="">UK</a>
+
+            <a href="">World</a>
+
+            <a href="">Politics</a>
+
+            <a href="">Tech</a>
+
+            <a href="">Science</a>
+
+            <a href="">Health</a>
+
+            <a href="">Education</a>
+
+            <a href="">Entertainmente & Arts</a>
+
+            <a href="">Video & Audio</a>
+
+            <a href="" img src="images/menu-arrow.png">More</a>
+
+
+          </div>
+
+        </div>
+
+      </div>
 
   </body>
 
