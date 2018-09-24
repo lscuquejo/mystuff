@@ -1,0 +1,368 @@
+#topbar{
+
+  width:1000px;
+  margin:0 auto;
+  background-color:white;
+  height: 40px;
+
+}
+
+body{
+
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica, Arial, sans-serif;
+
+}
+
+#logo{
+
+  margin-top:8px;
+  width:100px;
+  float:left;
+  margin-right: 8px;
+
+}
+
+.topbar-section{
+
+  float:left;
+  border-left:1px #CCCCCC solid;
+  height: 100%;
+
+}
+
+#man-icon{
+
+  width: 25px;
+  margin:10px 15px;
+  float:left;
+
+}
+
+#signin-text{
+
+  font-weight: bold;
+  font-size: 90%;
+  position: relative;
+  top:11px;
+  padding-right: 50px
+
+}
+
+#wigglyline{
+
+  float:left;
+  height:40px;
+
+}
+
+#bell {
+
+  height: 25px;
+  margin: 8px 8px 0;
+
+
+}
+
+#bell-div {
+
+  float:left;
+
+}
+
+.topbar-menu {
+
+  font-weight: bold;
+  font-size: 90%;
+  padding:13px 15px 0 15px;
+  height:27px
+
+}
+
+#arrow {
+
+  float: right;
+  width:13px
+  margin-left:20px
+
+}
+
+#searchbox{
+
+  background-color: #E4E4E4;
+  border: none;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 5px;
+  margin: 5px 0 5px 5px;
+  float: left;
+
+}
+
+#glass {
+
+  height: 26px;
+  margin-top: 5px
+
+}
+
+.clear {
+
+  clear:both;
+
+}
+
+#menu-bar-container{
+
+  border-top: 1px solid #CCCCCC;
+  background-color:#BC181D;
+  width:100%;
+  height:70px
+
+}
+
+#menu-bar{
+
+  width:1000px;
+  margin:0 auto;
+
+}
+
+h1 {
+
+  padding:0;
+  margin:0;
+  color:white;
+  font-size: 40px;
+  font-weight: normal;
+  padding-top: 10px;
+  float:left;
+
+}
+
+#find-box-all{
+
+  border: 1px solid gray;
+  float: right;
+  padding: 5px 5px 0 10px;
+  margin: 10px 10px 0 0;
+
+
+}
+
+#find-box-all a {
+
+  color:white;
+  text-decoration: none;
+  font-size: 26px;
+  position: relative;
+  top: -12px;
+
+}
+
+#find-box-all a:hover {
+
+  color:white;
+  text-decoration:underline;
+  position: relative;
+
+}
+
+#find-box-all img {
+
+  top: -20px;
+
+}
+
+#menu-bar-2-container{
+
+  background-color: #A91717;
+  width:100%
+
+}
+
+#menu-bar-2{
+
+  width: 1000px;
+  margin: 0 auto;
+  height: 40px;
+
+}
+
+#menu-bar-2 a {
+
+  color:white;
+  text-decoration: none;
+  padding: 0 10px;
+  border-right: 1px solid #BB4545;
+  font-size: 15px;
+  position: relative;
+  top: 9px;
+
+}
+
+#menu-bar-2 a:hover {
+
+  text-decoration: underline;
+
+}
+
+.no-border{
+
+  border:none !important;
+
+}
+
+#menu-arrow{
+
+  height: 14px;
+  position:relative;
+  top: 13px;
+
+}
+
+#page-container{
+
+  width: 1000px;
+  margin: 0 auto;
+}
+
+h2 {
+
+  font-weight: normal;
+  margin-top: 50px;
+  font-size: 20px;
+  border-bottom: 2px solid #a91717;
+  width: 103px;
+
+}
+
+h3 a{
+
+  color: gray;
+  font-size: 30px;
+  text-decoration: none;
+  font-weight: bold;
+
+}
+
+h3 a:hover{
+
+  color: #1167a8;
+
+}
+
+#article-summary{
+
+  color: #5a5a5a;
+  width: 250px;
+  float: left;
+
+
+}
+
+#article-summary img{
+
+  height: 25px;
+  position: relative;
+  top:6
+
+}
+
+#topic-link {
+
+  color: #a91717;
+  text-decoration: none;
+  border-left: 1px solid #CCCCCC;
+  padding-left:10px;
+
+}
+
+#article-summary a:hover{
+
+  color: #1167a8;
+
+}
+
+#date{
+
+  padding-right: 10px;
+
+}
+
+#article-container{
+
+  float: left;
+  width: 670px;
+  border-right: 1px solid #CCCCCC;
+  padding-right: 20px;
+
+}
+
+#asda-img{
+
+  width:400px;
+  margin-left: 20px;
+
+}
+
+#article-hr{
+
+  border-top: 1px solid #a91717;
+  width: 50px;
+
+}
+
+.article-link {
+
+  color: black;
+  text-decoration:none;
+
+}
+
+#watch-listen{
+
+  margin-left: 20px;
+  width: 1100px;
+
+}
+
+h4{
+
+  font-size: 25px;
+  color: grey;
+  font-weight: normal;
+
+
+}
+
+#menutopbar {
+
+  text-decoration: none;
+  color: black;
+
+}
+
+.article-image{
+
+  float: left;
+  width: 100px;
+  margin-right: 10px;
+
+}
+
+.watch-listen-link {
+
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+
+}
+
+.watch-listen-link:hover{
+
+  color: #1167a8;
+
+}
