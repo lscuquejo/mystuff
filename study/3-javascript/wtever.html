@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+
+        <meta charset="utf-8">
+
+        <title>Javascript</title>
+
+    </head>
+
+    <body>
+
+        <H1>Bom djorno</h1>
+
+        <p id="lol"></p>
+
+        <input type="text" id="myText" name="myText" placeholder="How old are you?" value="">
+
+        <button id="myButton" onclick="escreva('lol')">enter</button>
+
+        <script type="text/javascript">
+
+           function escreva (id) {
+
+                var text;
+
+                text = document.getElementById('myText').value;
+
+                if (text>7 && text<11) {
+
+                  var now = new Date();
+
+                  alert('dimenó'+now);
+
+                }
+
+                document.getElementById(id).innerHTML = text;
+
+            }
+
+
+        </script>
+
+    </body>
+
+</html>

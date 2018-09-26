@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+
+        <meta charset="utf-8">
+
+        <title>Javascript</title>
+
+    </head>
+
+    <body>
+
+        <p id="text">Hello World!</p>
+
+        <button id="myButton" onclick="escreva('text','ta','<i>')">Change text</button>
+
+        <p id="secondParagraph">Javascript is... </p>
+
+        <button id="secondButton" onclick="escreva('secondParagraph','thomás', '<strong>')">append text</button>
+
+        <p id="thirdParagraph"></p>
+
+        <button id="thirdButton" onclick="escreva('thirdParagraph','jorge','')">some text?</button>
+
+        <input type="text" name="myText" value="">
+
+        <script type="text/javascript">
+
+           function escreva (id, texto, blabla) {
+
+                document.getElementById(id).innerHTML = blabla+texto ;
+
+            }
+
+
+        </script>
+
+    </body>
+
+</html>

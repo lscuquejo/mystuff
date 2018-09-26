@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+
+        <meta charset="utf-8">
+
+        <title>Javascript</title>
+
+    </head>
+
+    <body>
+
+        <p id="text">Hello World!</p>
+
+        <button id="myButton">Change text</button>
+
+        <p id="secondParagraph">Javascript is... </p>
+
+        <button id="secondButton">append text</button>
+
+        <p id="thirdParagraph"></p>
+
+        <button id="thirdButton">some text?</button>
+
+        <p id="moreText"> some stuff</p>
+
+        <button id="styleText">style text</button>
+
+        <script type="text/javascript">
+
+            document.getElementById('myButton').onclick = function () {
+
+                document.getElementById("text").innerHTML = "hi leo";
+
+            }
+
+            document.getElementById('secondButton').onclick = function () {
+
+                document.getElementById('secondParagraph').innerHTML = "I think " + document.getElementById('secondParagraph').innerHTML + "awesome!";
+
+            }
+
+            document.getElementById('thirdButton').onclick = function () {
+
+                document.getElementById('thirdParagraph').innerHTML = "<h1>i love Javascript<h1>"
+
+          }
+
+          document.getElementById('styleText').onclick = function () {
+
+                document.getElementById('moreText').style.display = "none";
+
+          }
+
+        </script>
+
+    </body>
+
+</html>
