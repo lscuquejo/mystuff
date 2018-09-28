@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+
+        <meta charset="utf-8">
+
+        <title>next class</title>
+
+        <style type="text/css">
+
+        </style>
+
+    </head>
+
+    <body>
+
+      <p>How man fingers am I holding up?</p>
+
+      <p><input type="text" id="fingers"><button id="checkguess">Guess!</button></p>
+
+      <script type="text/javascript">
+
+          document.getElementById("checkguess").onclick = function() {
+
+            var randomNumber = Math.random ();
+
+            randomNumber = randomNumber * 6;
+
+            randomNumber = Math.floor(randomNumber);
+
+            if (document.getElementById("fingers").value == randomNumber) {
+
+              alert ("GJ! U did it");
+
+          }else {
+
+              alert ("Nope! The number was" + randomNumber);
+
+              }
+
+          }
+
+
+      </script>
+
+    </body>
+
+</html>

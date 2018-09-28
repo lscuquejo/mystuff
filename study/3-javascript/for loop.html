@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+
+        <meta charset="utf-8">
+
+        <title>next class</title>
+
+        <style type="text/css">
+
+        </style>
+
+    </head>
+
+    <body>
+
+      <div id="tweetDiv"></div>
+
+      <script type="text/javascript">
+
+          var tweetString = "";
+
+          var tweets = ["hi everyone!", "I love cornflakes!","Night night :)", "sweet dreams!"];
+
+          for (var i = 0; i < tweets.length; i++) {
+
+            tweetString = tweetString + "<p>" + tweets[i] + "</p>";
+
+          }
+
+          document.getElementById("tweetDiv").innerHTML = tweetString;
+
+      </script>
+
+    </body>
+
+</html>

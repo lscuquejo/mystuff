@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+
+        <meta charset="utf-8">
+
+        <title>next class</title>
+
+        <style type="text/css">
+
+        </style>
+
+    </head>
+
+    <body>
+
+      <p>login</p>
+
+      <p><input type="text" id="login"></p>
+
+      <p><button id="button">Enter</button></p>
+
+      <script type="text/javascript">
+
+          document.getElementById("button").onclick = function() {
+
+            var loginEntered = document.getElementById("login").value;
+
+            var login = "sonicleo";
+
+            if (loginEntered == login) {
+
+              alert ("... Loading ...")
+
+            }else {
+
+              alert ("login Entered does not exist... Try again!")
+
+            }
+
+          }
+
+
+      </script>
+
+    </body>
+
+</html>
