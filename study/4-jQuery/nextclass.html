@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+  <head>
+
+    <meta charset="utf-8">
+
+    <title>Nextclass</title>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="jquery-ui/jquery-ui.js"></script>
+
+    <link href="jquery-ui/jquery-ui.css" rel="stylesheet">
+
+    <style type="text/css">
+
+    body{
+
+      font-family: sans-serif;
+      padding: 0;
+      margin: 0;
+
+    }
+
+    #header {
+
+      width: 100%;
+      background-color: #EEEEEE;
+      height: 30px;
+      padding:5px;
+
+
+    }
+
+    #buttonContainer{
+
+      width: 233px;
+      margin:0 auto;
+
+    }
+
+    #logo{
+
+      float: left;
+      font-weight: bold;
+      font-size: 120%;
+      padding: 3px 5px;
+
+    }
+
+    .toggleButton{
+
+      float: left;
+      border:1px solid grey;
+      padding: 4px;
+      border-right: none;
+      font-size: 90%;
+
+    }
+
+    #html{
+
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+
+
+    }
+
+    #output{
+
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+      border-right: 1px solid grey;
+
+    }
+
+    .active{
+
+      background-color: #EAF3FF;
+
+    }
+
+    .highlightedButton{
+
+      background-color: grey;
+
+
+    }
+
+    textarea{
+
+      width: 50%;
+      height: 100%;
+
+    }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <div id="header">
+
+      <div id="logo">
+
+        CodePlayer
+
+      </div>
+
+      <div id="buttonContainer">
+
+        <div class="toggleButton active" id="html">HTML</div>
+
+        <div class="toggleButton" id="css">css</div>
+
+        <div class="toggleButton" id="javascript">javascript</div>
+
+        <div class="toggleButton active" id="output">Output</div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+    <div id="bodyContainer">
+
+      <textarea id="htmlTextarea">Hello World!</textarea>
+
+    </div>
+
+    <script type="text/javascript">
+
+      $(".toggleButton").hover(function(){
+
+        $(this).addClass("highlightedButton");
+
+      }, function () {
+
+        $(this).removeClass("highlightedButton");
+
+      });
+
+      $(".toggleButton").click(function() {
+
+        $(this).toggleClass("active");
+
+        $(this).removeClass("highlightedButton")
+
+      });
+
+    </script>
+
+  </body>
+
+</html>
