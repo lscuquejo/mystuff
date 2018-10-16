@@ -1,18 +1,33 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
 
-    <img src="img/back.jpg">
+  <?php
 
-  </body>
-</html>
+    $mailTo = "leonardo.s@cuquejo.org";
 
-<?php
+    $subject = "I hope this works!";
 
-echo "Hello sasda";
+    $body = "I think that you'r great!";
 
-?>
+    $headers = "From: oieusouleogamer@gmail.com";
+
+    if (mail ($mailTo, $subject, $body, $headers)){
+
+      echo "The email was sent successfully";
+
+
+    }else{
+
+      echo "The email could not be sent.";
+
+    }
+
+  ?>
+
+  <form method="post">
+
+    <p>what is ur name</p>
+
+    <input type="text" name="name">
+
+    <input type="submit" value="Submit">
+
+  </form>
