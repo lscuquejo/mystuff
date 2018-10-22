@@ -12,7 +12,7 @@
 
     while ($i < sizeof($family)) {
 
-      echo $family[$i];
+      echo "$family[$i]";
 
       $i++;
 
