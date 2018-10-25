@@ -42,7 +42,7 @@
                     echo "<p>There was a problem signing you up - please try again later.</p>";
 
                 }
-
+s
             }
 
         }
