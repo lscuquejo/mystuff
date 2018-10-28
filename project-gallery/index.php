@@ -1,3 +1,61 @@
+<?php
+
+include 'config.php';
+
+if (array_key_exists('name', $_POST) OR array_key_exists('uploaded_image', $_POST)) {
+
+  $link = mysqli_connect("$myHost", "$myUser", "$myPassword",  "$myDB");
+
+        if (mysqli_connect_error()) {
+
+            die ("There was an error connecting to the database");
+
+        }
+
+    $uploaded_image = mysqli_real_escape_string($link, $_POST['uploaded_image']);
+
+    $name = mysqli_real_escape_string($link, $_POST['name']);
+
+    if ($_POST['name'] == '') {
+
+        $mesage = "<div class='alert alert-danger' role='alert'>the image name is required.</div>";
+
+    } else if ($_POST['uploaded_image'] == '') {
+
+        $mesage = "<div class='alert alert-danger' role='alert'>the image source is required.</div>";
+
+    } else {
+
+        $query = "SELECT `id` FROM `gallery_images` WHERE name = '$name'";
+
+
+
+        $result = mysqli_query($link, $query);
+
+        if (mysqli_num_rows($result) > 0) {
+
+            $mesage = "<div class='alert alert-danger' role='alert'>That image name has already been taken.</div>";
+
+        } else {
+
+          $query = " INSERT INTO `gallery_images` (`name`, `uploaded_image`) VALUES ('$name','$uploaded_image')";
+
+            if (mysqli_query($link, $query)) {
+
+               $mesage = "<div class='alert alert-primary' role='alert'>Your image has been uploaded</div>";
+
+            } else {
+
+                $mesage ="<div class='alert alert-danger' role='alert'>There was a problem to upload your image - please try again later.</div>";
+
+            }
+
+        }
+
+    }
+
+}
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -6,7 +64,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Album example for Bootstrap</title>
+    <title>Image Gallery</title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
@@ -16,21 +74,21 @@
   </head>
 
   <body>
-
     <header>
       <div class="collapse bg-dark" id="navbarHeader">
         <div class="container">
           <div class="row">
+
             <div class="col-sm-8 col-md-7 py-4">
-              <h4 class="text-white">About</h4>
-              <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
+              <h4 class="text-white">Image Gallery</h4>
+              <p class="text-muted">Post Images and please be polite</p>
             </div>
             <div class="col-sm-4 offset-md-1 py-4">
               <h4 class="text-white">Contact</h4>
               <ul class="list-unstyled">
-                <li><a href="#" class="text-white">Follow on Twitter</a></li>
-                <li><a href="#" class="text-white">Like on Facebook</a></li>
-                <li><a href="#" class="text-white">Email me</a></li>
+                <li><a href="#" class="text-white">Follow me on Twitter</a></li>
+                <li><a href="https://www.facebook.com/leonardo.soarescuquejo" class="text-white">Follow me on Facebook</a></li>
+                <li><a href="https://twitter.com/" class="text-white">leonardo.s@cuquejo.org</a></li>
               </ul>
             </div>
           </div>
@@ -53,11 +111,31 @@
 
       <section class="jumbotron text-center">
         <div class="container">
-          <h1 class="jumbotron-heading">Album example</h1>
+          <h1 class="jumbotron-heading">Image Gallery</h1>
           <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
           <p>
-            <a href="#" class="btn btn-primary my-2">Main call to action</a>
-            <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+            <div class="container">
+              <form method="post">
+                <fieldset class="form-group row">
+                  <label for="image_name" class="col-sm-2">Image Name</label>
+                  <div class="col-sm-10">
+                    <input type="text" id="image_name" class="form-control" name="name">
+                  </div>
+                </fieldset>
+                <fieldset class="form-group row">
+                  <label for="password" class="col-sm-2">image Source</label>
+                  <div class="col-sm-10">
+                    <input type="text" id="image_source" class="form-control" name="uploaded_image">
+                  </div>
+                </fieldset>
+                <fieldset class="form-group row">
+                  <button type="submit" class="btn btn-primary">Upload</button>
+                </fieldset>
+                <fieldset>
+                  <?php echo "$mesage" ?>
+                </fieldset>
+              </form>
+            </div>
           </p>
         </div>
       </section>
@@ -66,52 +144,6 @@
         <div class="container">
 
           <div class="row">
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-
             <div class="col-md-4">
               <div class="card mb-4 box-shadow">
                 <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
