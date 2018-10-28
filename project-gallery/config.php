@@ -5,4 +5,7 @@
   $myHost = "localhost";
   $myDB = "mystuff";
 
+  $imgdir = '/home/leonardo/mystuff/project-gallery/usersimg/';
+
+
 ?>

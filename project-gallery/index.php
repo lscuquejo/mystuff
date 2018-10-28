@@ -12,7 +12,7 @@ if (array_key_exists('name', $_POST) OR array_key_exists('uploaded_image', $_POS
 
         }
 
-    $uploaded_image = mysqli_real_escape_string($link, $_POST['uploaded_image']);
+    $uploaded_image = mysqli_real_escape_string($link, $_FILES ['poggers_file']['name']);
 
     $name = mysqli_real_escape_string($link, $_POST['name']);
 
@@ -20,15 +20,13 @@ if (array_key_exists('name', $_POST) OR array_key_exists('uploaded_image', $_POS
 
         $mesage = "<div class='alert alert-danger' role='alert'>the image name is required.</div>";
 
-    } else if ($_POST['uploaded_image'] == '') {
+    } else if ($_FILES['poggers_file']['name'] == '') {
 
         $mesage = "<div class='alert alert-danger' role='alert'>the image source is required.</div>";
 
     } else {
 
         $query = "SELECT `id` FROM `gallery_images` WHERE name = '$name'";
-
-
 
         $result = mysqli_query($link, $query);
 
@@ -41,6 +39,10 @@ if (array_key_exists('name', $_POST) OR array_key_exists('uploaded_image', $_POS
           $query = " INSERT INTO `gallery_images` (`name`, `uploaded_image`) VALUES ('$name','$uploaded_image')";
 
             if (mysqli_query($link, $query)) {
+
+               $uploadfile = $imgdir . basename($_FILES['poggers_file']['name']);
+
+               move_uploaded_file($_FILES['poggers_file']['tmp_name'], $uploadfile);
 
                $mesage = "<div class='alert alert-primary' role='alert'>Your image has been uploaded</div>";
 
@@ -112,10 +114,10 @@ if (array_key_exists('name', $_POST) OR array_key_exists('uploaded_image', $_POS
       <section class="jumbotron text-center">
         <div class="container">
           <h1 class="jumbotron-heading">Image Gallery</h1>
-          <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
+          <p class="lead text-muted">please be polite or your image <br>will be deleted!!!</p>
           <p>
             <div class="container">
-              <form method="post">
+              <form enctype="multipart/form-data" method="post">
                 <fieldset class="form-group row">
                   <label for="image_name" class="col-sm-2">Image Name</label>
                   <div class="col-sm-10">
@@ -123,17 +125,25 @@ if (array_key_exists('name', $_POST) OR array_key_exists('uploaded_image', $_POS
                   </div>
                 </fieldset>
                 <fieldset class="form-group row">
-                  <label for="password" class="col-sm-2">image Source</label>
                   <div class="col-sm-10">
-                    <input type="text" id="image_source" class="form-control" name="uploaded_image">
+                    <input name="poggers_file" type="file" />
                   </div>
                 </fieldset>
+
                 <fieldset class="form-group row">
                   <button type="submit" class="btn btn-primary">Upload</button>
                 </fieldset>
                 <fieldset>
                   <?php echo "$mesage" ?>
                 </fieldset>
+                <?php
+
+                $uploaddir = '/var/www/uploads/';
+
+                echo "$uploaddir";
+
+                ?>
+
               </form>
             </div>
           </p>
@@ -142,6 +152,14 @@ if (array_key_exists('name', $_POST) OR array_key_exists('uploaded_image', $_POS
 
       <div class="album py-5 bg-light">
         <div class="container">
+
+          <?php
+
+            $i=0;
+
+            while ($i < sizeof($gallery)) {
+
+          ?>
 
           <div class="row">
             <div class="col-md-4">
@@ -159,82 +177,15 @@ if (array_key_exists('name', $_POST) OR array_key_exists('uploaded_image', $_POS
                 </div>
               </div>
             </div>
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
 
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <?php
+
+            $i++;
+
+            }
+
+            ?>
+
           </div>
         </div>
       </div>

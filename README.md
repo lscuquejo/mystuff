@@ -2,6 +2,7 @@
 
 ## Basic Operation System commands
 ```
+pwd # show all the path to this actual directory
 cd # to enter in a directory (Folder)
 ls # or dir to list files
 
