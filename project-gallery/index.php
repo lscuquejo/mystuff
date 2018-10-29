@@ -4,14 +4,6 @@ include 'config.php';
 
 if (array_key_exists('name', $_POST) OR array_key_exists('uploaded_image', $_POST)) {
 
-  $link = mysqli_connect("$myHost", "$myUser", "$myPassword",  "$myDB");
-
-        if (mysqli_connect_error()) {
-
-            die ("There was an error connecting to the database");
-
-        }
-
     $uploaded_image = mysqli_real_escape_string($link, $_FILES ['poggers_file']['name']);
 
     $name = mysqli_real_escape_string($link, $_POST['name']);
@@ -136,14 +128,6 @@ if (array_key_exists('name', $_POST) OR array_key_exists('uploaded_image', $_POS
                 <fieldset>
                   <?php echo "$mesage" ?>
                 </fieldset>
-                <?php
-
-                $uploaddir = '/var/www/uploads/';
-
-                echo "$uploaddir";
-
-                ?>
-
               </form>
             </div>
           </p>
@@ -155,24 +139,27 @@ if (array_key_exists('name', $_POST) OR array_key_exists('uploaded_image', $_POS
 
           <?php
 
-            $i=0;
+            $query = "SELECT * FROM `gallery_images`";
 
-            while ($i < sizeof($gallery)) {
+            $result = mysqli_query($link, $query);
+
+
+            while ($gallery = mysqli_fetch_assoc($result)) {
+
 
           ?>
 
           <div class="row">
             <div class="col-md-4">
               <div class="card mb-4 box-shadow">
-                <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
+                <img class="card-img-top" src="usersimg/<?php echo $gallery["uploaded_image"];?>" alt="">
                 <div class="card-body">
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text"><?php echo $gallery["name"];?></p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                       <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
                       <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
                     </div>
-                    <small class="text-muted">9 mins</small>
                   </div>
                 </div>
               </div>
