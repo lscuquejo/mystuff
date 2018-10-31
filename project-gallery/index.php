@@ -1,5 +1,13 @@
 <?php
 
+
+if ($_GET['id']) {
+
+  $id = mysqli_real_escape_string($link, $_GET['id']);
+
+  $query = "DELETE FROM `gallery_images` WHERE `id` = $id";
+
+}
 include 'config.php';
 
 if (array_key_exists('name', $_POST) OR array_key_exists('uploaded_image', $_POST)) {
@@ -49,6 +57,7 @@ if (array_key_exists('name', $_POST) OR array_key_exists('uploaded_image', $_POS
     }
 
 }
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -64,7 +73,7 @@ if (array_key_exists('name', $_POST) OR array_key_exists('uploaded_image', $_POS
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="album.css" rel="stylesheet">
+    <link href="album.css" rel="stylesheet" type="text/css">
   </head>
 
   <body>
@@ -135,44 +144,40 @@ if (array_key_exists('name', $_POST) OR array_key_exists('uploaded_image', $_POS
       </section>
 
       <div class="album py-5 bg-light">
-        <div class="container">
+        <div class="container" id="album_html">
+          <div class='row'>
 
-          <?php
+            <?php
 
-            $query = "SELECT * FROM `gallery_images`";
+              $query = "SELECT * FROM `gallery_images`";
 
-            $result = mysqli_query($link, $query);
+              $result = mysqli_query($link, $query);
 
+              $i = 0;
 
-            while ($gallery = mysqli_fetch_assoc($result)) {
+              while ($gallery = mysqli_fetch_assoc($result)) {
 
-
-          ?>
-
-          <div class="row">
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="usersimg/<?php echo $gallery["uploaded_image"];?>" alt="">
-                <div class="card-body">
-                  <p class="card-text"><?php echo $gallery["name"];?></p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+            ?>
+              <div class="col-md-4">
+                <div class="card md-4 box-shadow" style="width:18rem;" id="floated_card">
+                  <img id="default_image" class="card-img-top" src="usersimg/<?php echo $gallery["uploaded_image"];?>" alt="">
+                  <div class="card-body">
+                    <p class="card-text"><h2><?php echo $gallery["name"];?></h2></p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                        <a href="index.php?id=<?php echo $gallery["id"];?>"><button type="button" class="btn btn-sm btn-outline-secondary">Delete</button></a>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
+              <?php
+
+              }
+
+              ?>
             </div>
-
-            <?php
-
-            $i++;
-
-            }
-
-            ?>
-
           </div>
         </div>
       </div>
