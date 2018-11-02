@@ -1,32 +1,21 @@
 <?php
 
-
-if ($_GET['id']) {
-
-  $id = mysqli_real_escape_string($link, $_GET['id']);
-
-  $query = "DELETE FROM `gallery_images` WHERE `id` = $id";
-
-}
 include 'config.php';
 
 if (array_key_exists('name', $_POST) OR array_key_exists('uploaded_image', $_POST)) {
 
     $uploaded_image = mysqli_real_escape_string($link, $_FILES ['poggers_file']['name']);
+    $uploaded_image = str_replace(' ','_', $uploaded_image);
 
     $name = mysqli_real_escape_string($link, $_POST['name']);
 
-    if ($_POST['name'] == '') {
-
-        $mesage = "<div class='alert alert-danger' role='alert'>the image name is required.</div>";
-
-    } else if ($_FILES['poggers_file']['name'] == '') {
+    if ($_FILES['poggers_file']['name'] == '') {
 
         $mesage = "<div class='alert alert-danger' role='alert'>the image source is required.</div>";
 
     } else {
 
-        $query = "SELECT `id` FROM `gallery_images` WHERE name = '$name'";
+        $query = "SELECT `id` FROM `gallery_images` WHERE uploaded_image = '$uploaded_image'";
 
         $result = mysqli_query($link, $query);
 
@@ -36,13 +25,13 @@ if (array_key_exists('name', $_POST) OR array_key_exists('uploaded_image', $_POS
 
         } else {
 
-          $query = " INSERT INTO `gallery_images` (`name`, `uploaded_image`) VALUES ('$name','$uploaded_image')";
+          $query = " INSERT INTO `gallery_images` (`name`, `uploaded_image`, `download_c`, `view_c`) VALUES ('$name','$uploaded_image',0,0)";
 
             if (mysqli_query($link, $query)) {
 
-               $uploadfile = $imgdir . basename($_FILES['poggers_file']['name']);
+               move_uploaded_file($_FILES['poggers_file']['tmp_name'], "usersimg/".$uploaded_image);
 
-               move_uploaded_file($_FILES['poggers_file']['tmp_name'], $uploadfile);
+               print_r ($uploaded_image);
 
                $mesage = "<div class='alert alert-primary' role='alert'>Your image has been uploaded</div>";
 
@@ -57,6 +46,41 @@ if (array_key_exists('name', $_POST) OR array_key_exists('uploaded_image', $_POS
     }
 
 }
+
+$query = "SELECT * FROM `gallery_images`";
+
+$result = mysqli_query($link, $query);
+
+$gallery = mysqli_fetch_assoc($result);
+
+if ($_GET['id']) {
+
+  $id = mysqli_real_escape_string($link, $_GET['id']);
+
+  $query = "SELECT * FROM gallery_images WHERE id = '$id'";
+
+  $result = mysqli_query($link, $query);
+
+  $poggers = "usersimg/".$gallery['uploaded_image'];
+
+  unlink($poggers);
+
+  $query = "DELETE FROM `gallery_images` WHERE `id` = '$id'";
+
+  $result = mysqli_query($link, $query);
+
+  $mesage ="<div class='alert alert-success' role='alert'>Your image has been deleted successfully.</div>";
+
+}
+
+if ($_GET['view_c']) {
+
+  $view_c = mysqli_real_escape_string($link, $_GET['view_c']);
+
+  $query ="UPDATE gallery_images SET view_c = view_c + 1 WHERE id = '$id'";
+
+}
+
 
 ?>
 <!doctype html>
@@ -165,8 +189,9 @@ if (array_key_exists('name', $_POST) OR array_key_exists('uploaded_image', $_POS
                     <p class="card-text"><h2><?php echo $gallery["name"];?></h2></p>
                     <div class="d-flex justify-content-between align-items-center">
                       <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                        <a href="image.php?id=<?php echo $gallery["id"];?>"><button type="button" class="btn btn-sm btn-outline-secondary"><img src="websiteimg/eye.png" alt="" id="eye"><?php echo $gallery["view_c"];?> Views</button></a>
                         <a href="index.php?id=<?php echo $gallery["id"];?>"><button type="button" class="btn btn-sm btn-outline-secondary">Delete</button></a>
+                        <a href="download.php?id=<?php echo $gallery["id"];?>"><button type="button" class="btn btn-sm btn-outline-secondary"><img src="websiteimg/eye.png" alt="" id="eye"><?php echo $gallery["download_c"];?> Donwloads</button></a>
                       </div>
                     </div>
                   </div>
