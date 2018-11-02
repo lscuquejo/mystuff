@@ -53,9 +53,9 @@ $result = mysqli_query($link, $query);
 
 $gallery = mysqli_fetch_assoc($result);
 
-if ($_GET['id']) {
+if ($_POST['deleting']) {
 
-  $id = mysqli_real_escape_string($link, $_GET['id']);
+  $id = mysqli_real_escape_string($link, $_POST['deleting']);
 
   $query = "SELECT * FROM gallery_images WHERE id = '$id'";
 
@@ -98,6 +98,17 @@ if ($_GET['view_c']) {
 
     <!-- Custom styles for this template -->
     <link href="album.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript">
+
+      function del(myId){
+
+        document.getElementById('submitdel').value = myId;
+        document.getElementById('hiddenform').submit();
+
+      };
+
+    </script>
   </head>
 
   <body>
@@ -162,6 +173,15 @@ if ($_GET['view_c']) {
                   <?php echo "$mesage" ?>
                 </fieldset>
               </form>
+
+              <form method="post" id="hiddenform">
+                <fieldset class="form-group row">
+                  <div class="col-sm-10">
+                    <input type="hidden" class="form-control" name="deleting" value="" id="submitdel">
+                  </div>
+                </fieldset>
+
+              </form>
             </div>
           </p>
         </div>
@@ -190,7 +210,7 @@ if ($_GET['view_c']) {
                     <div class="d-flex justify-content-between align-items-center">
                       <div class="btn-group">
                         <a href="image.php?id=<?php echo $gallery["id"];?>"><button type="button" class="btn btn-sm btn-outline-secondary"><img src="websiteimg/eye.png" alt="" id="eye"><?php echo $gallery["view_c"];?> Views</button></a>
-                        <a href="index.php?id=<?php echo $gallery["id"];?>"><button type="button" class="btn btn-sm btn-outline-secondary">Delete</button></a>
+                        <button type="button" class="btn btn-sm btn-outline-secondary" onclick="del(<?php echo $gallery['id'] ?>)">Delete</button>
                         <a href="download.php?id=<?php echo $gallery["id"];?>"><button type="button" class="btn btn-sm btn-outline-secondary"><img src="websiteimg/eye.png" alt="" id="eye"><?php echo $gallery["download_c"];?> Donwloads</button></a>
                       </div>
                     </div>
@@ -222,7 +242,9 @@ if ($_GET['view_c']) {
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+
+        </script>
     <script>window.jQuery || document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/jquery-slim.min.js"><\/script>')</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>

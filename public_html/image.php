@@ -24,7 +24,16 @@
   </head>
   <body>
 
-    <img id="default_image" class="card-img-top" src="usersimg/<?php echo $gallery["uploaded_image"];?>" alt="">
+    <a href="index.php"><div class="container">
+
+      <div style="width: 50rem; padding-top: 10%; padding-left:5%;">
+
+        <img id="default_image" class="card-img-top" src="usersimg/<?php echo $gallery["uploaded_image"];?>" alt="">
+
+      </div>
+
+    </div></a>
+
 
   </body>
 </html>
