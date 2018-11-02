@@ -31,8 +31,6 @@ if (array_key_exists('name', $_POST) OR array_key_exists('uploaded_image', $_POS
 
                move_uploaded_file($_FILES['poggers_file']['tmp_name'], "usersimg/".$uploaded_image);
 
-               print_r ($uploaded_image);
-
                $mesage = "<div class='alert alert-primary' role='alert'>Your image has been uploaded</div>";
 
             } else {
@@ -234,9 +232,6 @@ if ($_GET['view_c']) {
         <p class="float-right">
           <a href="#">Back to top</a>
         </p>
-        <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-        <p>New to Bootstrap? <a href="../../">Visit the homepage</a> or read our <a href="../../getting-started/">getting started guide</a>.</p>
-      </div>
     </footer>
 
     <!-- Bootstrap core JavaScript
