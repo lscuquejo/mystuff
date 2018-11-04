@@ -9,9 +9,9 @@ if (array_key_exists('name', $_POST) OR array_key_exists('uploaded_image', $_POS
 
     $name = mysqli_real_escape_string($link, $_POST['name']);
 
-    if ($_FILES['poggers_file']['name'] == '') {
+    if ($_FILES['poggers_file']['name'] == '' or $_FILES['poggers_file']['type'] != 'image/png' and 'image/jpg') {
 
-        $mesage = "<div class='alert alert-danger' role='alert'>the image source is required.</div>";
+        $mesage = "<div class='alert alert-danger' role='alert'>the image is required. or this is not an valid format</div>";
 
     } else {
 
@@ -79,7 +79,6 @@ if ($_GET['view_c']) {
 
 }
 
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -101,9 +100,12 @@ if ($_GET['view_c']) {
 
       function del(myId){
 
-        document.getElementById('submitdel').value = myId;
-        document.getElementById('hiddenform').submit();
+        if (confirm('Are you sure you want to Delete this photo')) {
 
+          document.getElementById('submitdel').value = myId;
+          document.getElementById('hiddenform').submit();
+
+        }
       };
 
     </script>
@@ -112,7 +114,7 @@ if ($_GET['view_c']) {
   <body>
     <header>
       <div class="collapse bg-dark" id="navbarHeader">
-        <div class="container">
+        <div class="container" >
           <div class="row">
 
             <div class="col-sm-8 col-md-7 py-4">
@@ -150,7 +152,7 @@ if ($_GET['view_c']) {
           <h1 class="jumbotron-heading">Image Gallery</h1>
           <p class="lead text-muted">please be polite or your image <br>will be deleted!!!</p>
           <p>
-            <div class="container">
+            <div class="container" id="form-post">
               <form enctype="multipart/form-data" method="post">
                 <fieldset class="form-group row">
                   <label for="image_name" class="col-sm-2">Image Name</label>
@@ -158,10 +160,13 @@ if ($_GET['view_c']) {
                     <input type="text" id="image_name" class="form-control" name="name">
                   </div>
                 </fieldset>
+
                 <fieldset class="form-group row">
-                  <div class="col-sm-10">
-                    <input name="poggers_file" type="file" />
-                  </div>
+                    <div class="custom-file col-sm-4" id="filebrowse">
+                      <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                      <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" name="poggers_file">
+                    </div>
+
                 </fieldset>
 
                 <fieldset class="form-group row">
@@ -180,6 +185,7 @@ if ($_GET['view_c']) {
                 </fieldset>
 
               </form>
+
             </div>
           </p>
         </div>
@@ -201,15 +207,15 @@ if ($_GET['view_c']) {
 
             ?>
               <div class="col-md-4">
-                <div class="card md-4 box-shadow" style="width:18rem;" id="floated_card">
+                <div class="card md-4 box-shadow" style="width:20rem;" id="floated_card">
                   <img id="default_image" class="card-img-top" src="usersimg/<?php echo $gallery["uploaded_image"];?>" alt="">
                   <div class="card-body">
                     <p class="card-text"><h2><?php echo $gallery["name"];?></h2></p>
                     <div class="d-flex justify-content-between align-items-center">
                       <div class="btn-group">
                         <a href="image.php?id=<?php echo $gallery["id"];?>"><button type="button" class="btn btn-sm btn-outline-secondary"><img src="websiteimg/eye.png" alt="" id="eye"><?php echo $gallery["view_c"];?> Views</button></a>
-                        <button type="button" class="btn btn-sm btn-outline-secondary" onclick="del(<?php echo $gallery['id'] ?>)">Delete</button>
-                        <a href="download.php?id=<?php echo $gallery["id"];?>"><button type="button" class="btn btn-sm btn-outline-secondary"><img src="websiteimg/eye.png" alt="" id="eye"><?php echo $gallery["download_c"];?> Donwloads</button></a>
+                        <button type="button" class="btn btn-sm btn-outline-secondary" onclick="del(<?php echo $gallery['id'] ?>) "><img src="websiteimg/deleteicon.png" alt="" id="eye">Delete</button>
+                        <a href="download.php?id=<?php echo $gallery["id"];?>"><button type="button" class="btn btn-sm btn-outline-secondary"><img src="websiteimg/uploadicon.png" alt="" id="eye"><?php echo $gallery["download_c"];?> Donwloads</button></a>
                       </div>
                     </div>
                   </div>
