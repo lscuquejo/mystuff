@@ -9,7 +9,9 @@ if (array_key_exists('name', $_POST) OR array_key_exists('uploaded_image', $_POS
 
     $name = mysqli_real_escape_string($link, $_POST['name']);
 
-    if ($_FILES['poggers_file']['name'] == '' or $_FILES['poggers_file']['type'] != 'image/png' and 'image/jpg') {
+    $files_var = $_FILES['poggers_file']['type'];
+
+    if ($_FILES['poggers_file']['name'] == '' or ($files_var != 'image/png' and $files_var != 'image/jpeg' and $files_var != 'image/jpg')) {
 
         $mesage = "<div class='alert alert-danger' role='alert'>the image is required. or this is not an valid format</div>";
 
@@ -45,12 +47,6 @@ if (array_key_exists('name', $_POST) OR array_key_exists('uploaded_image', $_POS
 
 }
 
-$query = "SELECT * FROM `gallery_images`";
-
-$result = mysqli_query($link, $query);
-
-$gallery = mysqli_fetch_assoc($result);
-
 if ($_POST['deleting']) {
 
   $id = mysqli_real_escape_string($link, $_POST['deleting']);
@@ -58,6 +54,8 @@ if ($_POST['deleting']) {
   $query = "SELECT * FROM gallery_images WHERE id = '$id'";
 
   $result = mysqli_query($link, $query);
+
+  $gallery = mysqli_fetch_assoc($result);
 
   $poggers = "usersimg/".$gallery['uploaded_image'];
 
@@ -71,13 +69,11 @@ if ($_POST['deleting']) {
 
 }
 
-if ($_GET['view_c']) {
+$query = "SELECT COUNT(*) FROM gallery_images";
 
-  $view_c = mysqli_real_escape_string($link, $_GET['view_c']);
+$result = mysqli_query($link, $query);
 
-  $query ="UPDATE gallery_images SET view_c = view_c + 1 WHERE id = '$id'";
-
-}
+$lines = mysqli_fetch_assoc($result);
 
 ?>
 <!doctype html>
@@ -197,13 +193,25 @@ if ($_GET['view_c']) {
 
             <?php
 
-              $query = "SELECT * FROM `gallery_images`";
+                if ($_GET['nextpage']) {
 
-              $result = mysqli_query($link, $query);
+                  $next_page = mysqli_real_escape_string($link, $_GET['nextpage']);
+                  $ini = $next_page +1;
 
-              $i = 0;
+                } else {
 
-              while ($gallery = mysqli_fetch_assoc($result)) {
+                  $next_page = 0;
+                  $ini = $next_page;
+
+                }
+
+                $query = "SELECT * FROM `gallery_images` WHERE 1 ORDER BY `id` DESC LIMIT $ini,$pagenum";
+
+                $result = mysqli_query($link, $query);
+
+                $i = 0;
+
+                while ($gallery = mysqli_fetch_assoc($result)) {
 
             ?>
               <div class="col-md-4">
@@ -223,9 +231,11 @@ if ($_GET['view_c']) {
               </div>
               <?php
 
-              }
+              $last_id = $gallery["id"];
 
+              }
               ?>
+
             </div>
           </div>
         </div>
@@ -235,9 +245,42 @@ if ($_GET['view_c']) {
 
     <footer class="text-muted">
       <div class="container">
-        <p class="float-right">
-          <a href="#">Back to top</a>
+
+
+        <p class="float-left">
+          <?php if ($next_page != 0) {?>
+          <a href="index.php?nextpage=<?php echo $next_page -$pagenum;?>"><button type="button" class="btn btn-primary">Previous Page</button></a>
+          <?php  }  ?>
         </p>
+
+        <ul class="pagination float-left">
+          <?php
+
+          $countlines = $lines['COUNT(*)']/$pagenum;
+
+          $totalpages = 0;
+
+          while ($totalpages <= $countlines) {
+
+          ?>
+
+            <li class="page-item"><a class="page-link" href="index.php?nextpage=<?php echo $totalpages *$pagenum; ?>"><?php echo $totalpages?></a></li></a>
+
+          <?php
+
+          $totalpages++;
+
+          }
+          ?>
+        </ul>
+
+        <p class="float-left">
+          <?php if ($next_page <= $lines['COUNT(*)']) {    ?>
+          <a href="index.php?nextpage=<?php echo $next_page +$pagenum;?>"><button type="button" class="btn btn-primary">Next Page</button></a>
+          <?php  }  ?>
+        </p>
+
+
     </footer>
 
     <!-- Bootstrap core JavaScript
