@@ -29,6 +29,8 @@ if (array_key_exists('name', $_POST) OR array_key_exists('uploaded_image', $_POS
 
           $query = " INSERT INTO `gallery_images` (`name`, `uploaded_image`, `download_c`, `view_c`) VALUES ('$name','$uploaded_image',0,0)";
 
+          echo $query;
+
             if (mysqli_query($link, $query)) {
 
                move_uploaded_file($_FILES['poggers_file']['tmp_name'], "usersimg/".$uploaded_image);
