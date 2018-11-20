@@ -2,6 +2,8 @@
 
 class ship{
 
+  private $id;
+
   private $name;
 
   private $weaponPower = 0;
@@ -123,6 +125,20 @@ class ship{
   {
 
     $this->name = $name;
+
+  }
+
+  public function getId()
+  {
+
+    return $this->id;
+
+  }
+
+  public function setId()
+  {
+
+    $this->id = $id;
 
   }
 
