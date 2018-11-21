@@ -4,9 +4,9 @@ require __DIR__.'/bootstrap.php';
 $shipLoader = new ShipLoader();
 $ships = $shipLoader->getShips();
 
-$ship1Id = isset($_POST['ship1_id']) ? $_POST['ship1_name'] : null;
+$ship1Id = isset($_POST['ship1_id']) ? $_POST['ship1_id'] : null;
 $ship1Quantity = isset($_POST['ship1_quantity']) ? $_POST['ship1_quantity'] : 1;
-$ship2Id =  isset($_POST['ship2_id']) ? $_POST['ship2_name'] : null;
+$ship2Id =  isset($_POST['ship2_id']) ? $_POST['ship2_id'] : null;
 $ship2Quantity = isset($_POST['ship2_quantity']) ? $_POST['ship2_quantity'] : 1;
 
 if (!$ship1Id || !$ship2Id) {
