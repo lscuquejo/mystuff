@@ -7,6 +7,7 @@ $shipLoader = new ShipLoader(
   $configuration['db_user'],
   $configuration['db_pass']
 );
+
 $ships = $shipLoader->getShips();
 
 $errorMessage = '';

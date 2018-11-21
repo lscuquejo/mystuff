@@ -15,7 +15,8 @@ class ShipLoader
   {
     $this->dbDsn = $dbDsn;
     $this->dbUser = $dbUser;
-    $this->$dbPass = $dbPass;
+    $this->dbPass = $dbPass;
+
   }
 
   public function getShips()
