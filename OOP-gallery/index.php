@@ -2,6 +2,14 @@
 
 include 'config.php';
 
+require __DIR__.'/config.php';
+
+$shipLoader = new ImageLoader(
+  $configuration['db_dsn'],
+  $configuration['db_user'],
+  $configuration['db_pass']
+);
+
 if (array_key_exists('name', $_POST) OR array_key_exists('uploaded_image', $_POST)) {
 
     $uploaded_image = mysqli_real_escape_string($link, $_FILES ['poggers_file']['name']);
