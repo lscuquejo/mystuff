@@ -1,0 +1,43 @@
+<?php
+require_once 'AbstractShip.php';
+
+class RebelShip extends AbstractShip
+{
+
+  public function getFavoriteJedi()
+  {
+    $coolJedis = array('Yoda', 'Ben Kenobi');
+    $key = array_rand($coolJedis);
+
+    return $coolJedis[$key];
+  }
+
+  public function getType()
+  {
+
+    return 'Rebel';
+
+  }
+
+  public function isFUncional(){
+
+    return true;
+
+  }
+
+  public function getNameAndSpecs($useShortFormat = false)
+  {
+    $val = parent::getNameAndSpecs($useShortFormat);
+    $val .= "(rebel)";
+
+    return $val;
+
+  }
+
+  public function getJediFactor()
+  {
+    return rand(10, 30);
+  }
+
+}
+?>

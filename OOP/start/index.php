@@ -64,6 +64,7 @@ if (isset($_GET['error'])) {
                         <th>Jedi Factor</th>
                         <th>Strength</th>
                         <th>Status</th>
+                        <th>Type</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -73,14 +74,15 @@ if (isset($_GET['error'])) {
                             <td><?php echo $ship->getWeaponPower(); ?></td>
                             <td><?php echo $ship->getJediFactor(); ?></td>
                             <td><?php echo $ship->getStrength(); ?></td>
-                            <th>
+                            <td>
                             <?php  if($ship->isFUncional()):?>
                                 <i  class="fa fa-sun-o"></i>
                             <?php else: ?>
                                 <i  class="fa fa-cloud"></i>
                             <?php endif; ?>
 
-                            </th>
+                          </td>
+                          <td><?php echo $ship->getType(); ?></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
