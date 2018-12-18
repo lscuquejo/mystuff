@@ -34,9 +34,9 @@ class ship extends AbstractShip
 
   }
 
-  public function isFUncional(){
+  public function isFunctional(){
 
-    return !$this->$underRepair;
+    return !$this->underRepair;
 
   }
 

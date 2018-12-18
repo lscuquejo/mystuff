@@ -19,7 +19,7 @@ class RebelShip extends AbstractShip
 
   }
 
-  public function isFUncional(){
+  public function isFunctional(){
 
     return true;
 

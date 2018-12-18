@@ -26,3 +26,11 @@ git push   # send to the repo
 mysql -u root -p # Onde root = usuario
 
 ```
+
+## Basic atom
+
+```
+
+ctrl+shift+f # find all by "string" and replace.
+
+```

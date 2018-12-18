@@ -7,7 +7,9 @@ class Container
 
   private $pdo;
 
-  private $shiploader;
+  private $shipLoader;
+
+  private $shipStorage;
 
   private $battleManager;
 
@@ -39,10 +41,21 @@ class Container
   {
 
     if ($this->shipLoader === null){
-      $this->shipLoader = new ShipLoader($this->getPDO());
+      $this->shipLoader = new ShipLoader($this->getShipStorage());
     }
 
     return $this->shipLoader;
+
+  }
+
+  public function getShipStorage()
+  {
+
+    if ($this->shipStorage === null){
+      $this->shipStorage = new PdoShipStorage($this->getPDO());
+    }
+
+    return $this->shipStorage;
 
   }
 
