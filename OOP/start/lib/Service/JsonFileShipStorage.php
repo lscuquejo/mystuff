@@ -1,6 +1,8 @@
 <?php
 
-class JsonFileShipStorage
+require_once __DIR__.'/AbstractShipStorage.php';
+
+class JsonFileShipStorage extends AbstractShipStorage
 {
     private $filename;
 

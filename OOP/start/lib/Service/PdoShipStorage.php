@@ -1,8 +1,9 @@
 <?php
 
-  require_once __DIR__.'/ShipLoader.php';
+require_once __DIR__.'/AbstractShipStorage.php';
+require_once __DIR__.'/ShipLoader.php';
 
-  class PdoShipStorage
+  class PdoShipStorage extends AbstractShipStorage
   {
 
     private $pdo;
@@ -14,7 +15,7 @@
 
     }
 
-    public function fetchAllShipData()
+    public function fetchAllShipsData()
     {
 
       $pdo = $this->pdo;

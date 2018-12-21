@@ -48,11 +48,15 @@ class Container
 
   }
 
+  /**
+  * @returm AbstractShipStorage
+  */
+
   public function getShipStorage()
   {
 
     if ($this->shipStorage === null){
-      $this->shipStorage = new PdoShipStorage($this->getPDO());
+      $this->shipStorage = new JsonFileShipStorage(__DIR__.'/../../resources/ships.json');
     }
 
     return $this->shipStorage;
@@ -63,7 +67,7 @@ class Container
   {
 
     if ($this->battleManager === null){
-      $this->battleManager = new BattleManager($this->getPDO());
+      $this->battleManager = new BattleManager();
     }
 
     return $this->battleManager;
