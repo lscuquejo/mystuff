@@ -3,7 +3,7 @@
 require_once __DIR__.'/AbstractShipStorage.php';
 require_once __DIR__.'/ShipLoader.php';
 
-  class PdoShipStorage extends AbstractShipStorage
+  class PdoShipStorage implements ShipStorageInterface
   {
 
     private $pdo;

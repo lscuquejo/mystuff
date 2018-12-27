@@ -49,7 +49,7 @@ class Container
   }
 
   /**
-  * @returm AbstractShipStorage
+  * @returm ShipStorageInterface
   */
 
   public function getShipStorage()
