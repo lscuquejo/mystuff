@@ -1,6 +1,6 @@
 <?php
 
-class ImageLoader{
+class MyPDO{
 
   private $pdo;
 
@@ -56,21 +56,24 @@ class ImageLoader{
 
   }
 
-  private function getPDO()
+    public function getPDO()
   {
 
-    if ($this->pdo === null) {
-      $pdo = new PDO($this->dbDsn, $this->dbUser, $this->dbPass);
-      $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-      $this->pdo = $pdo;
+    if ($this->pdo === null){
+      $this->pdo = new PDO(
+        $this->dbDsn,
+        $this->dbUser,
+        $this->dbPass
+      );
+      
+      $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     }
 
     return $this->pdo;
 
   }
-
+    
 }
 
 ?>

@@ -1,7 +1,8 @@
 <?php
 
-class UploadedImage{
+require __DIR__.'./../config.php';
 
+class ImageLoader extends Image{
 
 
 }

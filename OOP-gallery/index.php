@@ -1,10 +1,8 @@
 <?php
 
-include 'config.php';
-
 require __DIR__.'/config.php';
 
-$shipLoader = new ImageLoader(
+$shipLoader = new MyPDO(
   $configuration['db_dsn'],
   $configuration['db_user'],
   $configuration['db_pass']
@@ -159,7 +157,7 @@ $lines = mysqli_fetch_assoc($result);
           <p class="lead text-muted">please be polite or your image <br>will be deleted!!!</p>
           <p>
             <div class="container" id="form-post">
-              <form enctype="multipart/form-data" method="post">
+              <form enctype="multipart/form-data" method="post" action="Uploader.php">
                 <fieldset class="form-group row">
                   <label for="image_name" class="col-sm-2">Image Name</label>
                   <div class="col-sm-10">
