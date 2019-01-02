@@ -4,12 +4,17 @@ require __DIR__.'./../config.php';
 
 class Image extends MyPDO
 {
+    
     private $name;
     private $imageName;
     private $id;
     private $viewC;
     private $downloadC;
     private $file;
+
+    /**
+     * function that inserts images data in the DataBase
+     */
 
     private function writeInDataBase(){
 
@@ -20,6 +25,10 @@ class Image extends MyPDO
 
     }
 
+     /**
+     * Method that merges the writeInDataBase() and the saveImageDir()
+     */
+
     public function saveImage(){
         
         $this->setImageName($this->genRandName($this->file["name"]));       
@@ -27,10 +36,14 @@ class Image extends MyPDO
             return $this->writeInDataBase();
             
         }else{
-            echo "morreu";
+            echo "I'am dead";
         }
 
     }
+
+     /**
+     * function that saves image in the directory "usersimgs"
+     */
 
     private function saveImageDir($file){
     
@@ -53,9 +66,17 @@ class Image extends MyPDO
 
     }
 
+    /**
+     * set the $imageName var value
+     */
+
     public function setImageName($imageName){
 
         $this->imageName=$imageName;
+
+     /**
+     * set the $name var value
+     */
 
     }
 
@@ -65,6 +86,10 @@ class Image extends MyPDO
         
     }
 
+     /**
+     * set the $id var value
+     */
+
 
     public function setId($id){
 
@@ -72,11 +97,19 @@ class Image extends MyPDO
         
     }
 
+     /**
+     * set the $viewC var value
+     */
+
     public function setViewC($viewC){
 
         $this->viewC=$viewC;
         
     }
+
+     /**
+     * set the $DownloadC var value
+     */
 
     public function setDownloadC($downloadC){
 
@@ -84,11 +117,29 @@ class Image extends MyPDO
         
     }
 
+     /**
+     * set the $file var value
+     */
+
+    public function setFile($file){
+
+        $this->file=$file;
+        
+    }
+
+     /**
+     * get the $id var value
+     */
+
     public function getId(){
 
         return $this->id;
 
     }
+
+     /**
+     * get the $name var value
+     */
 
     public function getName(){
 
@@ -96,11 +147,20 @@ class Image extends MyPDO
         
     }
 
+     /**
+     * get the $ImageName var value
+     */
+
     public function getImageName(){
 
         return $this->imageName;
         
     }
+
+     /**
+     * get the $viewC var value
+     */
+
 
     public function getViewC(){
 
@@ -108,21 +168,23 @@ class Image extends MyPDO
         
     }
 
+     /**
+     * get the $downloadC var value
+     */
+
     public function getDownloadC(){
 
         return $this->donwloadC;
         
     }
 
+     /**
+     * get the $file var value
+     */
+
     public function getFile(){
 
         return $this->$file;
-        
-    }
-
-    public function setFile($file){
-
-        $this->file=$file;
         
     }
     

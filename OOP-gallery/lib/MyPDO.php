@@ -44,18 +44,6 @@ class MyPDO{
     return $image;
   }
 
-  private function queryForImages()
-  {
-
-    $pdo = $this->getPDO();
-    $statement = $pdo->prepare("SELECT * FROM OOPGalleryTable");
-    $statement->execute();
-    $imagesArray = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-    return $imagesArray;
-
-  }
-
     public function getPDO()
   {
 

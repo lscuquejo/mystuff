@@ -8,6 +8,8 @@ $shipLoader = new MyPDO(
   $configuration['db_pass']
 );
 
+$imageArray = new ImageLoader($dbDsn, $dbUser, $dbPass);
+
 if (array_key_exists('name', $_POST) OR array_key_exists('uploaded_image', $_POST)) {
 
     $uploaded_image = mysqli_real_escape_string($link, $_FILES ['poggers_file']['name']);
@@ -219,7 +221,7 @@ $lines = mysqli_fetch_assoc($result);
 
                 $i = 0;
 
-                while ($gallery = mysqli_fetch_assoc($result)) {
+                foreach ($imageArray->queryForImages() as $gallery){
 
             ?>
               <div class="col-md-4">
@@ -240,7 +242,8 @@ $lines = mysqli_fetch_assoc($result);
               <?php
 
               $last_id = $gallery["id"];
-
+              print_r($gallery);
+              die ();
               }
               ?>
 
