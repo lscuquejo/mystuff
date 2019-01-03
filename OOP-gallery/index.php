@@ -167,7 +167,7 @@ $lines = mysqli_fetch_assoc($result);
                 </fieldset>
               </form>
 
-              <form method="post" id="hiddenform" action="/deleter.php">
+              <form method="post" id="hiddenform" action="deleter.php">
                 <fieldset class="form-group row">
                   <div class="col-sm-10">
                     <input type="hidden" class="form-control" name="deleting" value="" id="submitdel">

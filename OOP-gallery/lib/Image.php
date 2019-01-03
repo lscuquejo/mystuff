@@ -28,9 +28,9 @@ class Image extends MyPDO
     {
 
         $dataFromImg = $this->getImageById();
-        print_r($dataFromImg);die;
+        print_r($dataFromImg);
         $imageThatWillDelete = "usersimgs/".$dataFromImg['uploaded_image'];
-        // echo $imageThatWillDelete; die;
+        echo $imageThatWillDelete; die;
         unlink($imageThatWillDelete);
 
     }
