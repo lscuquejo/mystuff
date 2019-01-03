@@ -1,7 +1,5 @@
 <?php
 
-require __DIR__.'./../config.php';
-
 class ImageLoader extends MyPDO{
 
     public function queryForImages()

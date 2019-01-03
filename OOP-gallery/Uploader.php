@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__.'/lib/Image.php';
+require __DIR__.'/config.php';
 
 $showPost=new Image($dbDsn, $dbUser, $dbPass);
 $showPost->setName($_POST["name"]);

@@ -59,22 +59,6 @@ if (array_key_exists('name', $_POST) OR array_key_exists('uploaded_image', $_POS
 
 if ($_POST['deleting']) {
 
-  $id = mysqli_real_escape_string($link, $_POST['deleting']);
-
-  $query = "SELECT * FROM gallery_images WHERE id = '$id'";
-
-  $result = mysqli_query($link, $query);
-
-  $gallery = mysqli_fetch_assoc($result);
-
-  $poggers = "usersimg/".$gallery['uploaded_image'];
-
-  unlink($poggers);
-
-  $query = "DELETE FROM `gallery_images` WHERE `id` = '$id'";
-
-  $result = mysqli_query($link, $query);
-
   $mesage ="<div class='alert alert-success' role='alert'>Your image has been deleted successfully.</div>";
 
 }
@@ -159,7 +143,7 @@ $lines = mysqli_fetch_assoc($result);
           <p class="lead text-muted">please be polite or your image <br>will be deleted!!!</p>
           <p>
             <div class="container" id="form-post">
-              <form enctype="multipart/form-data" method="post" action="Uploader.php">
+              <form enctype="multipart/form-data" method="post" action="/Uploader.php">
                 <fieldset class="form-group row">
                   <label for="image_name" class="col-sm-2">Image Name</label>
                   <div class="col-sm-10">
@@ -183,7 +167,7 @@ $lines = mysqli_fetch_assoc($result);
                 </fieldset>
               </form>
 
-              <form method="post" id="hiddenform">
+              <form method="post" id="hiddenform" action="/deleter.php">
                 <fieldset class="form-group row">
                   <div class="col-sm-10">
                     <input type="hidden" class="form-control" name="deleting" value="" id="submitdel">
@@ -215,18 +199,12 @@ $lines = mysqli_fetch_assoc($result);
 
                 }
 
-                $query = "SELECT * FROM `gallery_images` WHERE 1 ORDER BY `id` DESC LIMIT $ini,$pagenum";
-
-                $result = mysqli_query($link, $query);
-
-                $i = 0;
-
                 foreach ($imageArray->queryForImages() as $gallery){
 
             ?>
               <div class="col-md-4">
                 <div class="card md-4 box-shadow" style="width:20rem;" id="floated_card">
-                  <img id="default_image" class="card-img-top" src="usersimg/<?php echo $gallery["uploaded_image"];?>" alt="">
+                  <img id="default_image" class="card-img-top" src="usersimgs/<?php echo $gallery["uploaded_image"];?>" alt="">
                   <div class="card-body">
                     <p class="card-text"><h2><?php echo $gallery["name"];?></h2></p>
                     <div class="d-flex justify-content-between align-items-center">
@@ -242,8 +220,7 @@ $lines = mysqli_fetch_assoc($result);
               <?php
 
               $last_id = $gallery["id"];
-              print_r($gallery);
-              die ();
+
               }
               ?>
 

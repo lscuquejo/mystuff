@@ -1,7 +1,5 @@
 <?php
 
-require __DIR__.'./../config.php';
-
 class Image extends MyPDO
 {
     
@@ -11,6 +9,48 @@ class Image extends MyPDO
     private $viewC;
     private $downloadC;
     private $file;
+    private $delId;
+    private $delImageFile;
+
+    private function getDelId()
+    {
+
+        $pdo = $this->getPDO();
+        $statement = $pdo->prepare("SELECT * FROM `OOPGalleryTable` WHERE id = '$this->id'");
+        $statement->execute();
+        $imageData = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+        return $imageData;
+
+    }
+
+    public function delFromDir()
+    {
+
+        $dataFromImg = $this->getDelId();
+        print_r($dataFromImg);die;
+        $imageThatWillDelete = "usersimgs/".$dataFromImg['uploaded_image'];
+        // echo $imageThatWillDelete; die;
+        unlink($imageThatWillDelete);
+
+    }
+
+    private function delFromDB()
+    {
+
+        $pdo = $this->getPDO();
+        $delFromPdo = $pdo->prepare("DELETE FROM `OOPGalleryTable` WHERE `id` = '$this->id'");
+        return $delFromPdo->execute();
+
+    }
+
+    public function deleteImage(){
+
+        $this->getDelId();
+        $this->delFromDir();
+        // $this->delFromDB();
+
+    }
 
     /**
      * function that inserts images data in the DataBase
@@ -21,7 +61,6 @@ class Image extends MyPDO
         $pdo = $this->getPDO();
         $insertInPdo = $pdo->prepare("INSERT INTO `OOPGalleryTable` (`name`, `uploaded_image`, `download_c`, `view_c`) VALUES ('$this->name','$this->imageName',0,0)");
         return $insertInPdo->execute();
-    
 
     }
 
@@ -64,6 +103,18 @@ class Image extends MyPDO
 
         return $randName;
 
+    }
+
+    public function setImageFile($imageFile){
+
+        $this->imageFile=$imageFile;
+        
+    }
+
+    public function setDelId($delId){
+
+        $this->delId=$delId;
+        
     }
 
     /**
