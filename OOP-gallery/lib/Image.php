@@ -12,7 +12,7 @@ class Image extends MyPDO
     private $delId;
     private $delImageFile;
 
-    private function getImageById()
+    public function getImageById()
     {
 
         $pdo = $this->getPDO();
@@ -46,7 +46,6 @@ class Image extends MyPDO
 
     public function deleteImage(){
 
-        $this->getImageById();
         $this->delFromDir();
         // $this->delFromDB();
 
