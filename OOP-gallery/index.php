@@ -29,39 +29,27 @@ if (array_key_exists('name', $_POST) OR array_key_exists('uploaded_image', $_POS
 
         $result = mysqli_query($link, $query);
 
-        if (mysqli_num_rows($result) > 0) {
-
-            $mesage = "<div class='alert alert-danger' role='alert'>That image name has already been taken.</div>";
-
-        } else {
-
-          $query = " INSERT INTO `gallery_images` (`name`, `uploaded_image`, `download_c`, `view_c`) VALUES ('$name','$uploaded_image',0,0)";
-
-          echo $query;
-
-            if (mysqli_query($link, $query)) {
-
-               move_uploaded_file($_FILES['poggers_file']['tmp_name'], "usersimg/".$uploaded_image);
-
-               $mesage = "<div class='alert alert-primary' role='alert'>Your image has been uploaded</div>";
-
-            } else {
-
-                $mesage ="<div class='alert alert-danger' role='alert'>There was a problem to upload your image - please try again later.</div>";
-
-            }
-
-        }
-
     }
 
 }
 
-if ($_POST['deleting']) {
+// if ($_GET['nextpage']) {
 
-  $mesage ="<div class='alert alert-success' role='alert'>Your image has been deleted successfully.</div>";
+//   $next_page = mysqli_real_escape_string($link, $_GET['nextpage']);
+//   $ini = $next_page +1;
 
-}
+// } else {
+
+//   $next_page = 0;
+//   $ini = $next_page;
+
+// }
+
+// $query = "SELECT * FROM `gallery_images` WHERE 1 ORDER BY `id` DESC LIMIT $ini,$pagenum";
+
+// $result = mysqli_query($link, $query);
+
+// $i = 0;
 
 $query = "SELECT COUNT(*) FROM gallery_images";
 
@@ -209,9 +197,9 @@ $lines = mysqli_fetch_assoc($result);
                     <p class="card-text"><h2><?php echo $gallery["name"];?></h2></p>
                     <div class="d-flex justify-content-between align-items-center">
                       <div class="btn-group">
-                        <a href="image.php?id=<?php echo $gallery["id"];?>"><button type="button" class="btn btn-sm btn-outline-secondary"><img src="websiteimg/eye.png" alt="" id="eye"><?php echo $gallery["view_c"];?> Views</button></a>
+                        <a href="View&download.php?id=<?php echo $gallery["id"];?>&view=true"><button type="button" class="btn btn-sm btn-outline-secondary"><img src="websiteimg/eye.png" alt="" id="eye"><?php echo $gallery["view_c"];?> Views</button></a>
                         <button type="button" class="btn btn-sm btn-outline-secondary" onclick="del(<?php echo $gallery['id'] ?>) "><img src="websiteimg/deleteicon.png" alt="" id="eye">Delete</button>
-                        <a href="download.php?id=<?php echo $gallery["id"];?>"><button type="button" class="btn btn-sm btn-outline-secondary"><img src="websiteimg/uploadicon.png" alt="" id="eye"><?php echo $gallery["download_c"];?> Donwloads</button></a>
+                        <a href="View&download.php?id=<?php echo $gallery["id"];?>&download=true"><button type="button" class="btn btn-sm btn-outline-secondary"><img src="websiteimg/uploadicon.png" alt="" id="eye"><?php echo $gallery["download_c"];?> Donwloads</button></a>
                       </div>
                     </div>
                   </div>

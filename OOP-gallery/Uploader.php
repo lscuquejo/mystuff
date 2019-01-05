@@ -7,10 +7,6 @@ $showPost->setName($_POST["name"]);
 $showPost->setFile($_FILES["poggers_file"]);
 if($showPost->saveImage()){
 
-    header("Location: http://localhost:3000/OOP-gallery/");
+    header("Location: ". $myhome);
 
-}else{
-
-    header("Location: http://localhost:3000/OOP-gallery/?error='error_to_save_image'");
-
-};
+}

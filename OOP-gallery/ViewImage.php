@@ -1,18 +1,11 @@
 <?php
 
-  include 'config.php';
+require __DIR__.'/config.php';
 
-  $id = mysqli_real_escape_string($link, $_GET['id']);
-
-  $query = "SELECT * FROM gallery_images WHERE id = '$id'";
-
-  $result = mysqli_query($link, $query);
-
-  $gallery = mysqli_fetch_assoc($result);
-
-  $query ="UPDATE gallery_images SET view_c = view_c + 1 WHERE id = '$id'";
-
-  $result = mysqli_query($link, $query);
+$viewImage = new Image($dbDsn, $dbUser, $dbPass);
+$viewImage->setId($_GET["id"]);
+$arrayV = $viewImage->getImageById();
+$viewImage->incrementView();
 
 ?>
 <!DOCTYPE html>
@@ -28,12 +21,11 @@
 
       <div style="width: 50rem; padding-top: 10%; padding-left:5%;">
 
-        <img id="default_image" class="card-img-top" src="usersimg/<?php echo $gallery["uploaded_image"];?>" alt="">
+        <img id="default_image" class="card-img-top" src="usersimgs/<?php echo $arrayV['uploaded_image'];?>" alt="">
 
       </div>
 
     </div></a>
-
 
   </body>
 </html>

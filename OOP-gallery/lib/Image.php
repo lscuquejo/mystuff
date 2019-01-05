@@ -2,15 +2,47 @@
 
 class Image extends MyPDO
 {
-    
+    /**
+     * variables
+     */
     private $name;
     private $imageName;
     private $id;
     private $viewC;
     private $downloadC;
     private $file;
-    private $delId;
-    private $delImageFile;
+
+    private function getImageByImageName()
+    {
+
+        $pdo = $this->getPDO();
+        $statement = $pdo->prepare("SELECT * FROM `OOPGalleryTable` WHERE id = '$this->imageName'");
+        $statement->execute();
+        $imageData = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+        return $imageData[0];
+
+    }
+
+    public function incrementView(){
+
+        $pdo = $this->getPDO();
+        $statement = $pdo->prepare("UPDATE `OOPGalleryTable` SET view_c = view_c + 1 WHERE id = '$this->id'");
+        $statement->execute();
+
+    }
+
+    public function incrementDownload(){
+
+        $pdo = $this->getPDO();
+        $statement = $pdo->prepare("UPDATE `OOPGalleryTable` SET download_c = download_c + 1 WHERE id = '$this->id'");
+        $statement->execute();
+
+    }
+
+    /**
+     * function that get the image by its id
+     */
 
     public function getImageById()
     {
@@ -20,20 +52,26 @@ class Image extends MyPDO
         $statement->execute();
         $imageData = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-        return $imageData;
+        return $imageData[0];
 
     }
 
-    public function delFromDir()
+    /**
+     * function that deletes an image from the Dir.usersimgs
+     */
+
+    private function delFromDir()
     {
 
         $dataFromImg = $this->getImageById();
-        print_r($dataFromImg);
         $imageThatWillDelete = "usersimgs/".$dataFromImg['uploaded_image'];
-        echo $imageThatWillDelete; die;
         unlink($imageThatWillDelete);
 
     }
+
+    /**
+     * function that deletes an image from the DataBase"pdo"
+     */
 
     private function delFromDB()
     {
@@ -44,10 +82,14 @@ class Image extends MyPDO
 
     }
 
+    /**
+     * Method that merges the delFromDir() and the delFromDB()
+     */
+
     public function deleteImage(){
 
         $this->delFromDir();
-        // $this->delFromDB();
+        $this->delFromDB();
 
     }
 
@@ -74,7 +116,7 @@ class Image extends MyPDO
             return $this->writeInDataBase();
             
         }else{
-            echo "I'am dead";
+            echo "U must to fill all the formulary...";
         }
 
     }
@@ -104,18 +146,6 @@ class Image extends MyPDO
 
     }
 
-    public function setImageFile($imageFile){
-
-        $this->imageFile=$imageFile;
-        
-    }
-
-    public function setDelId($delId){
-
-        $this->delId=$delId;
-        
-    }
-
     /**
      * set the $imageName var value
      */
@@ -124,11 +154,11 @@ class Image extends MyPDO
 
         $this->imageName=$imageName;
 
+    }
+
      /**
      * set the $name var value
      */
-
-    }
 
     public function setName($name){
 
