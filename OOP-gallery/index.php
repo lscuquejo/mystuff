@@ -4,6 +4,7 @@ require __DIR__.'/config.php';
 
 $imagesArray = new ImageLoader($dbDsn, $dbUser, $dbPass);
 $imagesArray->setNextPage($_GET["nextpage"]);
+$imagesArray->setErrorMsg($_GET["errormsg"]);
 $imagesArray->settingPages();
 $queryForImages = $imagesArray->queryForImages();
 $countLines = $imagesArray->countLines();
@@ -91,21 +92,39 @@ $getLines = $imagesArray->getLines();
                 <fieldset class="form-group row">
                   <label for="image_name" class="col-sm-2">Image Name</label>
                   <div class="col-sm-10">
-                    <input type="text" id="image_name" class="form-control" name="name">
+                    <input type="text" id="image_name" class="form-control" name="name" required>
                   </div>
                 </fieldset>
 
                 <fieldset class="form-group row">
-                    <div class="custom-file col-sm-4" id="filebrowse">
-                      <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-                      <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" name="poggers_file">
-                    </div>
+
+                  <div class="custom-file col-sm-4">
+                    <input type="file" class="custom-file-input" id="validatedCustomFile" name="poggers_file" required>
+                    <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+                  </div>
 
                 </fieldset>
 
                 <fieldset class="form-group row">
                   <button type="submit" class="btn btn-primary">Upload</button>
                 </fieldset>
+
+                <?php 
+                
+                if ($imagesArray->getErrorMsg() != "")
+                {
+
+                ?>
+
+                "<div class='alert alert-danger' role='alert'>The Name is Empty or its not an Image </div>";
+
+
+                <?php 
+
+                }
+                  
+                ?>
+
               </form>
 
               <form method="post" id="hiddenform" action="deleter.php">
@@ -175,7 +194,7 @@ $getLines = $imagesArray->getLines();
 
           $totalPages = 0;
  
-          while ($totalPages <= $countLines) {
+          while ($totalPages < $countLines) {
 
           ?>
 
@@ -190,7 +209,7 @@ $getLines = $imagesArray->getLines();
         </ul>
           
         <p class="float-left">
-          <?php if ($getNextPage <= $getLines["COUNT(*)"]) {    ?>
+          <?php if (($getNextPage + $GLOBALS["pagenum"])  <= $getLines["COUNT(*)"]) {    ?>
           <a href="index.php?nextpage=<?php echo $getNextPage +  $GLOBALS["pagenum"];?>"><button type="button" class="btn btn-primary">Next Page</button></a>
           <?php  }  ?>
         </p>

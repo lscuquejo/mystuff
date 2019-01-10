@@ -1,10 +1,19 @@
 <?php
 
-class ImageLoader extends MyPDO{
+class ImageLoader extends MyPDO
+{
 
+    /**
+     * variables
+     */
 
     private $ini;
     private $nextPage;
+    private $errorMsg;
+
+    /**
+     * function that query for all Images From the data base(array)
+     */
 
     public function queryForImages(){
 
@@ -19,11 +28,19 @@ class ImageLoader extends MyPDO{
    
     }
 
+    /**
+     * sets the $nextPage var value
+     */
+
     public function setNextPage($nextPage){
 
       $this->nextPage=$nextPage;
 
     }
+
+    /**
+     * Function that sets the ini var and the nextpage var if the values is true or false
+     */
 
     public function settingPages(){
 
@@ -40,6 +57,10 @@ class ImageLoader extends MyPDO{
 
     }
 
+    /**
+     * Function that Counts the lines(rows) based in the DataBase
+     */
+
     public function getLines(){
 
       $pdo = $this->getPDO();
@@ -51,6 +72,10 @@ class ImageLoader extends MyPDO{
 
     }
 
+    /**
+     * Function that Counts how many pages de the website needs for the footer pagination
+     */
+
     public function countLines(){
 
       $lines = $this->getLines();
@@ -60,16 +85,44 @@ class ImageLoader extends MyPDO{
 
     }
 
+    /**
+     * gets the $ini var value
+     */
+
     public function getIni(){
 
       return $this->ini;
       
     }
 
+    /**
+     * gets the $nextPage var value
+     */
+
     public function getNextPage(){
 
       return $this->nextPage;
       
+    }
+
+    /**
+     * sets the $errorMsg var value
+     */
+
+    public function setErrorMsg($errorMsg){
+
+      $this->errorMsg=$errorMsg;
+
+    }
+
+    /**
+     * gets the $errorMsg var value
+     */
+
+    public function getErrorMsg(){
+
+      return $this->errorMsg;
+
     }
 
   }

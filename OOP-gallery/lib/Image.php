@@ -13,10 +13,14 @@ class Image extends MyPDO
     private $file;
     private $fileType;
 
+    /**
+     * function that check upload form if its an image or the name is empty
+     */
+
     public function checkUpload(){
 
-        if ($name == '' or ($this->fileType != 'image/png' and
-         $this->fileType != 'image/jpeg' and $this->fileType != 'image/jpg')){
+        if ($this->name == '' && ($this->fileType != 'image/png' &&
+         $this->fileType != 'image/jpeg' && $this->fileType != 'image/jpg')){
 
             return true;
 
@@ -27,6 +31,10 @@ class Image extends MyPDO
         }
 
     }
+
+    /**
+     * function that gets Image by its Images name
+     */
 
     private function getImageByImageName()
     {
@@ -40,6 +48,10 @@ class Image extends MyPDO
 
     }
 
+    /**
+     * function that incrementsViewCounter
+     */
+
     public function incrementView(){
 
         $pdo = $this->getPDO();
@@ -47,6 +59,10 @@ class Image extends MyPDO
         $statement->execute();
 
     }
+
+    /**
+     * function that incrementsDownloadCounter
+     */
 
     public function incrementDownload(){
 
@@ -57,7 +73,7 @@ class Image extends MyPDO
     }
 
     /**
-     * function that get the image by its id
+     * function that gets the image by its id
      */
 
     public function getImageById()
@@ -81,8 +97,8 @@ class Image extends MyPDO
 
         $dataFromImg = $this->getImageById();
         $imageThatWillDelete = "usersimgs/".$dataFromImg['uploaded_image'];
-        unlink($imageThatWillDelete);
-
+        return unlink($imageThatWillDelete);
+    
     }
 
     /**
@@ -104,8 +120,16 @@ class Image extends MyPDO
 
     public function deleteImage(){
 
-        $this->delFromDir();
-        $this->delFromDB();
+        
+        if ($this->delFromDir() && $this->delFromDB()){
+
+            return true;
+
+        } else {
+
+            return false;
+
+        }
 
     }
 
@@ -116,13 +140,15 @@ class Image extends MyPDO
     private function writeInDataBase(){
 
         $pdo = $this->getPDO();
-        $insertInPdo = $pdo->prepare("INSERT INTO `OOPGalleryTable` (`name`, `uploaded_image`, `download_c`, `view_c`) VALUES ('$this->name','$this->imageName',0,0)");
+        $insertInPdo = $pdo->prepare("INSERT INTO `OOPGalleryTable` (`name`, `uploaded_image`, `download_c`, `view_c`) VALUES (:name,:imageName,0,0)");
+        $insertInPdo->bindValue(':name', $this->name, PDO::PARAM_STR);
+        $insertInPdo->bindValue(':imageName', $this->imageName, PDO::PARAM_STR);
         return $insertInPdo->execute();
 
     }
 
      /**
-     * Method that merges the writeInDataBase() and the saveImageDir()
+     * Method that merges the writeInDataBase(), saveImageDir() and checkupload();
      */
 
     public function saveImage(){

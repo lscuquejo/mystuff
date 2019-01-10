@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * End Point That check, set vars and SaveImage
+*/
+
 require __DIR__.'/config.php';
 
 $showPost=new Image($dbDsn, $dbUser, $dbPass);
@@ -8,7 +12,7 @@ $showPost->setFile($_FILES["poggers_file"]);
 $showPost->setFileType($_FILES["poggers_file"]['type']);
 if($showPost->checkUpload()){
 
-    echo "there was a problem with your image type or the name is empty";
+    header("Location: ". $myhome."?errormsg");
 
 }else{
 

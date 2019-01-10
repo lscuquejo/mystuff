@@ -2,6 +2,10 @@
 
 class MyPDO{
 
+  /**
+   * variables
+   */
+
   private $pdo;
 
   private $dbDsn;
@@ -9,6 +13,10 @@ class MyPDO{
   private $dbUser;
 
   private $dbPass;
+
+  /**
+   * function that check upload form if its an image or the name is empty
+  */
 
   public function __construct($dbDsn, $dbUser, $dbPass)
   {
