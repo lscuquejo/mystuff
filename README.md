@@ -21,7 +21,7 @@ git push   # send to the repo
 ```
 
 ## MYSQL
-
+<>
 ```
 mysql -u root -p # Onde root = usuario
 

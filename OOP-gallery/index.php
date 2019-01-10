@@ -157,9 +157,9 @@ $getLines = $imagesArray->getLines();
                     <p class="card-text"><h2><?php echo $gallery["name"];?></h2></p>
                     <div class="d-flex justify-content-between align-items-center">
                       <div class="btn-group">
-                        <a href="View&download.php?id=<?php echo $gallery["id"];?>&view=true"><button type="button" class="btn btn-sm btn-outline-secondary"><img src="websiteimg/eye.png" alt="" id="eye"><?php echo $gallery["view_c"];?> Views</button></a>
+                        <a href="ViewDownload.php?id=<?php echo $gallery["id"];?>&view=true"><button type="button" class="btn btn-sm btn-outline-secondary"><img src="websiteimg/eye.png" alt="" id="eye"><?php echo $gallery["view_c"];?> Views</button></a>
                         <button type="button" class="btn btn-sm btn-outline-secondary" onclick="del(<?php echo $gallery['id'] ?>) "><img src="websiteimg/deleteicon.png" alt="" id="eye">Delete</button>
-                        <a href="View&download.php?id=<?php echo $gallery["id"];?>&download=true"><button type="button" class="btn btn-sm btn-outline-secondary"><img src="websiteimg/uploadicon.png" alt="" id="eye"><?php echo $gallery["download_c"];?> Donwloads</button></a>
+                        <a href="ViewDownload.php?id=<?php echo $gallery["id"];?>&download=true"><button type="button" class="btn btn-sm btn-outline-secondary"><img src="websiteimg/uploadicon.png" alt="" id="eye"><?php echo $gallery["download_c"];?> Donwloads</button></a>
                       </div>
                     </div>
                   </div>
