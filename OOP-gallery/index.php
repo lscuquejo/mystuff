@@ -2,62 +2,18 @@
 
 require __DIR__.'/config.php';
 
-$shipLoader = new MyPDO(
-  $configuration['db_dsn'],
-  $configuration['db_user'],
-  $configuration['db_pass']
-);
+$imagesArray = new ImageLoader($dbDsn, $dbUser, $dbPass);
+$imagesArray->setNextPage($_GET["nextpage"]);
+$imagesArray->settingPages();
+$queryForImages = $imagesArray->queryForImages();
+$countLines = $imagesArray->countLines();
 
-$imageArray = new ImageLoader($dbDsn, $dbUser, $dbPass);
-
-if (array_key_exists('name', $_POST) OR array_key_exists('uploaded_image', $_POST)) {
-
-    $uploaded_image = mysqli_real_escape_string($link, $_FILES ['poggers_file']['name']);
-    $uploaded_image = str_replace(' ','_', $uploaded_image);
-
-    $name = mysqli_real_escape_string($link, $_POST['name']);
-
-    $files_var = $_FILES['poggers_file']['type'];
-
-    if ($_FILES['poggers_file']['name'] == '' or ($files_var != 'image/png' and $files_var != 'image/jpeg' and $files_var != 'image/jpg')) {
-
-        $mesage = "<div class='alert alert-danger' role='alert'>the image is required. or this is not an valid format</div>";
-
-    } else {
-
-        $query = "SELECT `id` FROM `gallery_images` WHERE uploaded_image = '$uploaded_image'";
-
-        $result = mysqli_query($link, $query);
-
-    }
-
-}
-
-// if ($_GET['nextpage']) {
-
-//   $next_page = mysqli_real_escape_string($link, $_GET['nextpage']);
-//   $ini = $next_page +1;
-
-// } else {
-
-//   $next_page = 0;
-//   $ini = $next_page;
-
-// }
-
-// $query = "SELECT * FROM `gallery_images` WHERE 1 ORDER BY `id` DESC LIMIT $ini,$pagenum";
-
-// $result = mysqli_query($link, $query);
-
-// $i = 0;
-
-$query = "SELECT COUNT(*) FROM gallery_images";
-
-$result = mysqli_query($link, $query);
-
-$lines = mysqli_fetch_assoc($result);
+$getIni = $imagesArray->getIni();
+$getNextPage = $imagesArray->getNextPage();
+$getLines = $imagesArray->getLines();
 
 ?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -150,9 +106,6 @@ $lines = mysqli_fetch_assoc($result);
                 <fieldset class="form-group row">
                   <button type="submit" class="btn btn-primary">Upload</button>
                 </fieldset>
-                <fieldset>
-                  <?php echo "$mesage" ?>
-                </fieldset>
               </form>
 
               <form method="post" id="hiddenform" action="deleter.php">
@@ -175,19 +128,7 @@ $lines = mysqli_fetch_assoc($result);
 
             <?php
 
-                if ($_GET['nextpage']) {
-
-                  $next_page = mysqli_real_escape_string($link, $_GET['nextpage']);
-                  $ini = $next_page +1;
-
-                } else {
-
-                  $next_page = 0;
-                  $ini = $next_page;
-
-                }
-
-                foreach ($imageArray->queryForImages() as $gallery){
+                foreach ($queryForImages as $gallery){
 
             ?>
               <div class="col-md-4">
@@ -224,38 +165,35 @@ $lines = mysqli_fetch_assoc($result);
 
 
         <p class="float-left">
-          <?php if ($next_page != 0) {?>
-          <a href="index.php?nextpage=<?php echo $next_page -$pagenum;?>"><button type="button" class="btn btn-primary">Previous Page</button></a>
+          <?php if ($getNextPage != 0) {?>
+          <a href="index.php?nextpage=<?php echo $getNextPage -$this->$GLOBALS["pagenum"];?>"><button type="button" class="btn btn-primary">Previous Page</button></a>
           <?php  }  ?>
         </p>
 
         <ul class="pagination float-left">
           <?php
 
-          $countlines = $lines['COUNT(*)']/$pagenum;
-
-          $totalpages = 0;
-
-          while ($totalpages <= $countlines) {
+          $totalPages = 0;
+ 
+          while ($totalPages <= $countLines) {
 
           ?>
 
-            <li class="page-item"><a class="page-link" href="index.php?nextpage=<?php echo $totalpages *$pagenum; ?>"><?php echo $totalpages?></a></li></a>
+            <li class="page-item"><a class="page-link" href="index.php?nextpage=<?php echo $totalPages *$GLOBALS["pagenum"]; ?>"><?php echo $totalPages?></a></li></a>
 
           <?php
 
-          $totalpages++;
+          $totalPages++;
 
           }
           ?>
         </ul>
-
+          
         <p class="float-left">
-          <?php if ($next_page <= $lines['COUNT(*)']) {    ?>
-          <a href="index.php?nextpage=<?php echo $next_page +$pagenum;?>"><button type="button" class="btn btn-primary">Next Page</button></a>
+          <?php if ($getNextPage <= $getLines["COUNT(*)"]) {    ?>
+          <a href="index.php?nextpage=<?php echo $getNextPage +  $GLOBALS["pagenum"];?>"><button type="button" class="btn btn-primary">Next Page</button></a>
           <?php  }  ?>
         </p>
-
 
     </footer>
 

@@ -11,6 +11,22 @@ class Image extends MyPDO
     private $viewC;
     private $downloadC;
     private $file;
+    private $fileType;
+
+    public function checkUpload(){
+
+        if ($name == '' or ($this->fileType != 'image/png' and
+         $this->fileType != 'image/jpeg' and $this->fileType != 'image/jpg')){
+
+            return true;
+
+        }else{
+
+            return false;
+
+        }
+
+    }
 
     private function getImageByImageName()
     {
@@ -111,13 +127,15 @@ class Image extends MyPDO
 
     public function saveImage(){
         
-        $this->setImageName($this->genRandName($this->file["name"]));       
-        if ($this->saveImageDir($this->file)){
-            return $this->writeInDataBase();
-            
-        }else{
-            echo "U must to fill all the formulary...";
-        }
+        $this->setImageName($this->genRandName($this->file["name"])); 
+
+        if ($this->checkUpload()){}
+            if ($this->saveImageDir($this->file)){
+                return $this->writeInDataBase();
+                
+            }else{
+                echo "You must to fill all the formulary...";
+            }
 
     }
 
@@ -204,6 +222,16 @@ class Image extends MyPDO
     public function setFile($file){
 
         $this->file=$file;
+        
+    }
+
+    /**
+     * set the $fileType var value
+     */
+
+    public function setfileType($fileType){
+
+        $this->fileType=$fileType;
         
     }
 
