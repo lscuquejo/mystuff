@@ -24,7 +24,7 @@ class Image extends MyPDO
 
             return true;
 
-        }else{
+        } else {
 
             return false;
 
@@ -155,13 +155,20 @@ class Image extends MyPDO
         
         $this->setImageName($this->genRandName($this->file["name"])); 
 
-        if ($this->checkUpload()){}
+        if ($this->checkUpload()){
+
+
+
+        } else {
+
             if ($this->saveImageDir($this->file)){
                 return $this->writeInDataBase();
                 
-            }else{
+            } else {
                 echo "You must to fill all the formulary...";
             }
+
+        }
 
     }
 
