@@ -14,6 +14,6 @@ if ($deleteImage->deleteImage()){
 
 } else {
 
-    header("Location: ". $myhome."?errormsg");
+    header("Location: ". $myhome."?errormsg=delete");
 
 }

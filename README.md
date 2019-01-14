@@ -21,8 +21,13 @@ git push   # send to the repo
 ```
 
 ## MYSQL
-<>
 ```
 mysql -u root -p # Onde root = usuario
+
+```
+
+## Composer
+```
+composer create-project symfony/skeleton "Directory-Name"
 
 ```

@@ -19,8 +19,7 @@ class Image extends MyPDO
 
     public function checkUpload(){
 
-        if ($this->name == '' && ($this->fileType != 'image/png' &&
-         $this->fileType != 'image/jpeg' && $this->fileType != 'image/jpg')){
+        if ($this->fileType != 'image/png' && $this->fileType != 'image/jpeg' && $this->fileType != 'image/jpg'){
 
             return true;
 
@@ -156,8 +155,6 @@ class Image extends MyPDO
         $this->setImageName($this->genRandName($this->file["name"])); 
 
         if ($this->checkUpload()){
-
-
 
         } else {
 

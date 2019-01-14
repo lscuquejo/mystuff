@@ -116,7 +116,7 @@ $getLines = $imagesArray->getLines();
 
                 ?>
 
-                "<div class='alert alert-danger' role='alert'>The Name is Empty or its not an Image </div>";
+                <div class='alert alert-danger' role='alert'>That is not an image or is not suported format(Png, Jpg or Jpeg)</div>;
 
 
                 <?php 
@@ -152,7 +152,7 @@ $getLines = $imagesArray->getLines();
             ?>
               <div class="col-md-4">
                 <div class="card md-4 box-shadow" style="width:20rem;" id="floated_card">
-                  <img id="default_image" class="card-img-top" src="usersimgs/<?php echo $gallery["uploaded_image"];?>" alt="">
+                <a href="ViewDownload.php?id=<?php echo $gallery["id"];?>&view=true"><img id="default_image" class="card-img-top" src="usersimgs/<?php echo $gallery["uploaded_image"];?>" alt=""></a>
                   <div class="card-body">
                     <p class="card-text"><h2><?php echo $gallery["name"];?></h2></p>
                     <div class="d-flex justify-content-between align-items-center">
@@ -166,8 +166,6 @@ $getLines = $imagesArray->getLines();
                 </div>
               </div>
               <?php
-
-              $last_id = $gallery["id"];
 
               }
               ?>

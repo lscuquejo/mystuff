@@ -10,14 +10,13 @@ $showPost=new Image($dbDsn, $dbUser, $dbPass);
 $showPost->setName($_POST["name"]);
 $showPost->setFile($_FILES["poggers_file"]);
 $showPost->setFileType($_FILES["poggers_file"]['type']);
-if($showPost->checkUpload()){
 
-    header("Location: ". $myhome."?errormsg");
-
-}else{
-
-    $showPost->saveImage();
+if ($showPost->saveImage()){    
 
     header("Location: ". $myhome);
 
+} else { 
+
+    header("Location: ". $myhome."?errormsg=true");
+ 
 }
