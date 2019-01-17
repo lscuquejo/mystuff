@@ -10,6 +10,9 @@
                 'path' => [
                     '/news/{slug}',
                 ],
+                'name' => [
+                    'article_show',
+                ],
             ],
         ],
         [
