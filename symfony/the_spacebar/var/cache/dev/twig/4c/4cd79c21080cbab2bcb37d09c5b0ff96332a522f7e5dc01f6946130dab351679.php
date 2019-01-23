@@ -476,6 +476,6 @@ class __TwigTemplate_2450a8499d2a5e7ccd1c3fd12c9962030f32834e947d5769cca25317a24
         {% endif %}
     </div>
 </div>
-", "@Twig/Exception/exception.html.twig", "/home/lscuquejo/mystuff/symfony/the_spacebar/vendor/symfony/twig-bundle/Resources/views/Exception/exception.html.twig");
+", "@Twig/Exception/exception.html.twig", "/home/leonardoscuquejo/mystuff/symfony/the_spacebar/vendor/symfony/twig-bundle/Resources/views/Exception/exception.html.twig");
     }
 }

@@ -396,6 +396,6 @@ class __TwigTemplate_78add6b8452898fa2d8fb589bd7b22aa32a87c66c6afa434327f5e424d4
         </div>
     {% endfor %}
 {% endblock %}
-", "@Debug/Profiler/dump.html.twig", "/home/lscuquejo/mystuff/symfony/the_spacebar/vendor/symfony/debug-bundle/Resources/views/Profiler/dump.html.twig");
+", "@Debug/Profiler/dump.html.twig", "/home/leonardoscuquejo/mystuff/symfony/the_spacebar/vendor/symfony/debug-bundle/Resources/views/Profiler/dump.html.twig");
     }
 }

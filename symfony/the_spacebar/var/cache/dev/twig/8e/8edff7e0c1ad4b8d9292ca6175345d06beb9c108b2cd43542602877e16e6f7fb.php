@@ -145,6 +145,6 @@ class __TwigTemplate_9820b71fad28b9c6c6bffc00bfa944a51b8b4a3fc200951d0055285079c
 
     {{ include('@WebProfiler/Profiler/toolbar_item.html.twig', { link: false }) }}
 {% endblock %}
-", "@WebProfiler/Collector/ajax.html.twig", "/home/lscuquejo/mystuff/symfony/the_spacebar/vendor/symfony/web-profiler-bundle/Resources/views/Collector/ajax.html.twig");
+", "@WebProfiler/Collector/ajax.html.twig", "/home/leonardoscuquejo/mystuff/symfony/the_spacebar/vendor/symfony/web-profiler-bundle/Resources/views/Collector/ajax.html.twig");
     }
 }

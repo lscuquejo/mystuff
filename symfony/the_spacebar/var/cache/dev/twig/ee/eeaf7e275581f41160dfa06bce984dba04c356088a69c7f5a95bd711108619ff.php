@@ -452,6 +452,6 @@ class __TwigTemplate_8017d479d2739f5a9fd7497f6d2bd0b52b12769090e9640a38fa25e12c1
         </div>
     {% endif %}
 {% endblock %}
-", "@WebProfiler/Collector/twig.html.twig", "/home/lscuquejo/mystuff/symfony/the_spacebar/vendor/symfony/web-profiler-bundle/Resources/views/Collector/twig.html.twig");
+", "@WebProfiler/Collector/twig.html.twig", "/home/leonardoscuquejo/mystuff/symfony/the_spacebar/vendor/symfony/web-profiler-bundle/Resources/views/Collector/twig.html.twig");
     }
 }

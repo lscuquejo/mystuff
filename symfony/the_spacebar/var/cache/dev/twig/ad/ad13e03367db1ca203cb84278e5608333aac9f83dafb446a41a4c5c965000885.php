@@ -210,6 +210,6 @@ class __TwigTemplate_0a4e40d4e422c0058e3db37314b3261138bbe4abba0ef551631b3c83bdb
         {{ include('@Twig/base_js.html.twig') }}
     </body>
 </html>
-", "@Twig/layout.html.twig", "/home/lscuquejo/mystuff/symfony/the_spacebar/vendor/symfony/twig-bundle/Resources/views/layout.html.twig");
+", "@Twig/layout.html.twig", "/home/leonardoscuquejo/mystuff/symfony/the_spacebar/vendor/symfony/twig-bundle/Resources/views/layout.html.twig");
     }
 }

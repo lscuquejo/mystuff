@@ -621,6 +621,6 @@ class __TwigTemplate_e9dc771962c550ede953ea520d0761a74077172f14ce4707fb1ac51e152
     });
 
 /*]]>*/</script>
-", "@Twig/base_js.html.twig", "/home/lscuquejo/mystuff/symfony/the_spacebar/vendor/symfony/twig-bundle/Resources/views/base_js.html.twig");
+", "@Twig/base_js.html.twig", "/home/leonardoscuquejo/mystuff/symfony/the_spacebar/vendor/symfony/twig-bundle/Resources/views/base_js.html.twig");
     }
 }

@@ -12,5 +12,9 @@
 */
 
 Route::get('/', function () {
+    $a = 5;
+    $b = 6;
+    $c = $a + $b;
+    echo $c;
     return view('welcome');
 });

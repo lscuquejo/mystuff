@@ -190,6 +190,6 @@ class __TwigTemplate_30818ddba0d14778d12df65c27330b0d8c438442a3c08b51350ab3ebb5a
         })|raw }}
     </div>
 {% endif %}
-", "@Twig/Exception/trace.html.twig", "/home/lscuquejo/mystuff/symfony/the_spacebar/vendor/symfony/twig-bundle/Resources/views/Exception/trace.html.twig");
+", "@Twig/Exception/trace.html.twig", "/home/leonardoscuquejo/mystuff/symfony/the_spacebar/vendor/symfony/twig-bundle/Resources/views/Exception/trace.html.twig");
     }
 }
