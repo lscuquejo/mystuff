@@ -84,5 +84,10 @@ class Article
         return $this;
     }
 
+    public function getId()
+    {
+        return $this->id;
+    }
+
     // add your own fields
 }

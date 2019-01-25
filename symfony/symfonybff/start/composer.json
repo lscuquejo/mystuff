@@ -19,6 +19,7 @@
         "symfony/yaml": "^4.0"
     },
     "require-dev": {
+        "allocine/twigcs": "^3.1",
         "easycorp/easy-log-handler": "^1.0.2",
         "symfony/debug-bundle": "^3.3|^4.0",
         "symfony/dotenv": "^4.0",
