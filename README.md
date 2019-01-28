@@ -45,7 +45,16 @@ composer create-project symfony/skeleton "Directory-Name" # creates symfony skel
 
 ```
 
-## Doctrine Commands
+## Doctrine Commands to create from an already created database
+```
+
+php bin/console doctrine:mapping:import 'App\Entity' annotation --path=src/Entity # dont forget to configure your database in "config/packages/doctrine.yaml
+
+php bin/console make:entity --regenerate App # to create setters and getters
+
+```
+
+## Doctrine Commands to create brand new database
 ```
 
 ./bin/console make:entity # don't forget to be in the right dir.
