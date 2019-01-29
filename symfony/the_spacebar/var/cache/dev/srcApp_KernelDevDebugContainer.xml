@@ -16,6 +16,7 @@
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="MonologBundle">Symfony\Bundle\MonologBundle\MonologBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
+      <parameter key="KnpMarkdownBundle">Knp\Bundle\MarkdownBundle\KnpMarkdownBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
@@ -45,6 +46,10 @@
       <parameter key="DebugBundle" type="collection">
         <parameter key="path">/home/leonardoscuquejo/mystuff/symfony/the_spacebar/vendor/symfony/debug-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\DebugBundle</parameter>
+      </parameter>
+      <parameter key="KnpMarkdownBundle" type="collection">
+        <parameter key="path">/home/leonardoscuquejo/mystuff/symfony/the_spacebar/vendor/knplabs/knp-markdown-bundle</parameter>
+        <parameter key="namespace">Knp\Bundle\MarkdownBundle</parameter>
       </parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
@@ -1321,6 +1326,9 @@
       <call method="addExtension">
         <argument type="service" id="twig.extension.webprofiler"/>
       </call>
+      <call method="addExtension">
+        <argument type="service" id="twig.extension.exercise.twig"/>
+      </call>
       <call method="addGlobal">
         <argument>app</argument>
         <argument type="service" id="twig.app_variable"/>
@@ -1678,6 +1686,47 @@
         <argument>server:dump</argument>
       </call>
     </service>
+    <service id="markdown.parser.min" class="Knp\Bundle\MarkdownBundle\Parser\Preset\Min" public="false">
+      <tag name="markdown.parser" alias="min"/>
+    </service>
+    <service id="markdown.parser.light" class="Knp\Bundle\MarkdownBundle\Parser\Preset\Light" public="false">
+      <tag name="markdown.parser" alias="light"/>
+    </service>
+    <service id="markdown.parser.medium" class="Knp\Bundle\MarkdownBundle\Parser\Preset\Medium" public="false">
+      <tag name="markdown.parser" alias="medium"/>
+    </service>
+    <service id="markdown.parser.max" class="Knp\Bundle\MarkdownBundle\Parser\Preset\Max" public="false">
+      <tag name="markdown.parser" alias="max"/>
+    </service>
+    <service id="markdown.parser.flavored" class="Knp\Bundle\MarkdownBundle\Parser\Preset\Flavored" public="false">
+      <tag name="markdown.parser" alias="flavored"/>
+    </service>
+    <service id="markdown.parser.parser_manager" class="Knp\Bundle\MarkdownBundle\Parser\ParserManager" public="false">
+      <call method="addParser">
+        <argument type="service" id="markdown.parser.min"/>
+        <argument>min</argument>
+      </call>
+      <call method="addParser">
+        <argument type="service" id="markdown.parser.light"/>
+        <argument>default</argument>
+      </call>
+      <call method="addParser">
+        <argument type="service" id="markdown.parser.medium"/>
+        <argument>medium</argument>
+      </call>
+      <call method="addParser">
+        <argument type="service" id="markdown.parser.max"/>
+        <argument>max</argument>
+      </call>
+      <call method="addParser">
+        <argument type="service" id="markdown.parser.flavored"/>
+        <argument>flavored</argument>
+      </call>
+    </service>
+    <service id="twig.extension.exercise.twig" class="Knp\Bundle\MarkdownBundle\Twig\Extension\MarkdownTwigExtension" public="false">
+      <tag name="twig.extension"/>
+      <argument type="service" id="markdown.parser.parser_manager"/>
+    </service>
     <service id="service_container" class="Symfony\Component\DependencyInjection\ContainerInterface" public="true" synthetic="true"/>
     <service id="SensioLabs\Security\SecurityChecker" class="SensioLabs\Security\SecurityChecker" autowire="true" autoconfigure="true"/>
     <service id=".abstract.instanceof.SensioLabs\Security\Command\SecurityCheckerCommand" class="SensioLabs\Security\Command\SecurityCheckerCommand" autowire="true" autoconfigure="true" abstract="true"/>
@@ -1685,16 +1734,25 @@
       <argument>/home/leonardoscuquejo/mystuff/symfony/the_spacebar/var/log/dev.log</argument>
     </service>
     <service id=".abstract.instanceof.App\Controller\ArticleController" class="App\Controller\ArticleController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".service_locator.q0UqyxM" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="cache" type="service" id="cache.app"/>
+        <argument key="markdown" type="service" id="markdown.parser.light"/>
+      </argument>
+    </service>
     <service id=".service_locator.1n6P8pO" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="logger" type="service" id="monolog.logger"/>
       </argument>
     </service>
-    <service id=".service_locator.N8R9kxl" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.1MWB5sn" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Controller\ArticleController::show" type="service" id=".service_locator.q0UqyxM"/>
         <argument key="App\Controller\ArticleController::toggleArticleHeart" type="service" id=".service_locator.1n6P8pO"/>
+        <argument key="App\Controller\ArticleController:show" type="service" id=".service_locator.q0UqyxM"/>
         <argument key="App\Controller\ArticleController:toggleArticleHeart" type="service" id=".service_locator.1n6P8pO"/>
       </argument>
     </service>
@@ -1971,7 +2029,7 @@
     <service id="debug.argument_resolver.request.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\RequestValueResolver" public="false"/>
     <service id="debug.argument_resolver.session.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\SessionValueResolver" public="false"/>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.N8R9kxl"/>
+      <argument type="service" id=".service_locator.1MWB5sn"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
@@ -2131,9 +2189,10 @@
     <service id="Twig_Environment" alias="twig" public="false"/>
     <service id="Twig\Environment" alias="twig" public="false"/>
     <service id="logger" alias="monolog.logger"/>
+    <service id="markdown.parser" alias="markdown.parser.light" public="true"/>
     <service id="Psr\Container\ContainerInterface" alias="service_container" public="false"/>
     <service id="Symfony\Component\DependencyInjection\ContainerInterface" alias="service_container" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.N8R9kxl"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.1MWB5sn"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="event_dispatcher" alias="debug.event_dispatcher" public="true"/>
@@ -2151,6 +2210,8 @@
     <service id="Symfony\Component\Routing\Generator\UrlGeneratorInterface" alias="router.default" public="false"/>
     <service id="Symfony\Component\Routing\Matcher\UrlMatcherInterface" alias="router.default" public="false"/>
     <service id="Symfony\Component\Routing\RequestContextAwareInterface" alias="router.default" public="false"/>
+    <service id="Knp\Bundle\MarkdownBundle\MarkdownParserInterface" alias="markdown.parser.light"/>
+    <service id="Michelf\MarkdownInterface" alias="markdown.parser.light"/>
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger" public="false"/>
   </services>
 </container>
