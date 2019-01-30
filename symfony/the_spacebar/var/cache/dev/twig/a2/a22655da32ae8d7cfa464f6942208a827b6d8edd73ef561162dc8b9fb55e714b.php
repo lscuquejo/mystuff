@@ -91,7 +91,7 @@ class __TwigTemplate_3f19cfc5a935062471bbc3f782c571402322764cce837822bd8a3d369c2
         // line 14
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/alien-profile.png"), "html", null, true);
         echo "\"> Mike Ferengi </span>
-                                <span class=\"pl-2 article-details\"> 3 hours ago</span>
+                                <span class=\"pl-2 article-details\"> 4 hours ago</span>
                                 <span class=\"pl-2 article-details\">
                                 <span class=\"js-like-article-count\">5</span>
                                 <a href=\"";
@@ -240,7 +240,7 @@ class __TwigTemplate_3f19cfc5a935062471bbc3f782c571402322764cce837822bd8a3d369c2
                                 <span class=\"show-article-title \">{{ title }}</span>
                                 <br>
                                 <span class=\"align-left article-details\"><img class=\"article-author-img rounded-circle\" src=\"{{ asset('images/alien-profile.png') }}\"> Mike Ferengi </span>
-                                <span class=\"pl-2 article-details\"> 3 hours ago</span>
+                                <span class=\"pl-2 article-details\"> 4 hours ago</span>
                                 <span class=\"pl-2 article-details\">
                                 <span class=\"js-like-article-count\">5</span>
                                 <a href=\"{{ path('article_toggle_heart', {slug: slug}) }}\" class=\"fa fa-heart-o like-article js-like-article\"></a>

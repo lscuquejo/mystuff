@@ -1,13 +1,12 @@
 <?php
 namespace App\Controller;
-use Michelf\MarkdownInterface;
+use App\service\MarkdownHelper;
 use Psr\Log\LoggerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Cache\Adapter\AdapterInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
-use Twig\Environment;
+
 class ArticleController extends AbstractController
 {
     /**
@@ -20,7 +19,7 @@ class ArticleController extends AbstractController
     /**
      * @Route("/news/{slug}", name="article_show")
      */
-    public function show($slug, MarkdownInterface $markdown, AdapterInterface $cache)
+    public function show($slug, MarkdownHelper $markdownHelper)
     {
         $comments = [
             'I ate a normal rock once. It did NOT taste like bacon!',
@@ -34,7 +33,7 @@ labore minim pork belly spare ribs cupim short loin in. Elit exercitation eiusmo
 turkey shank eu pork belly meatball non cupim.
 Laboris beef ribs fatback fugiat eiusmod jowl kielbasa alcatra dolore velit ea ball tip. Pariatur
 laboris sunt venison, et laborum dolore minim non meatball. Shankle eu flank aliqua shoulder,
-capicola biltong frankfurter boudin cupim officia. Exercitation fugiat consectetur ham. Adipisicing
+capicola biltong frankfurter boudin cupim officia. Exrcitation fugiat consectetur ham. Adipisicing
 picanha shank et filet mignon pork belly ut ullamco. Irure velit turducken ground round doner incididunt
 occaecat lorem meatball prosciutto quis strip steak.
 Meatball adipisicing ribeye bacon strip steak eu. Consectetur ham hock pork hamburger enim strip steak
@@ -44,17 +43,7 @@ cow est ribeye adipisicing. Pig hamburger pork belly enim. Do porchetta minim ca
 fugiat.
 EOF;
 
-        dump($cache);die;
-
-        $item = $cache->getItem('markdown_'.md5($articleContent));
-
-        if (!$item->isHit()) {
-
-            $item->set($markdown->transform($articleContent));
-            $cache->save($item);
-
-        }
-        $articleContent = $item->get();
+        $articleContent = $markdownHelper->parse($articleContent);
 
 
         return $this->render('article/show.html.twig', [

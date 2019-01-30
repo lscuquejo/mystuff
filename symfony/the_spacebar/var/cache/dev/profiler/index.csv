@@ -1,0 +1,11 @@
+cbddaf,127.0.0.1,GET,http://localhost:8000/,1548865103,,200
+e940c9,127.0.0.1,GET,http://localhost:8000/,1548865132,,200
+6e1239,127.0.0.1,GET,http://localhost:8000/,1548865241,,200
+d7a9a0,127.0.0.1,GET,http://localhost:8000/,1548865456,,200
+d3d7a3,127.0.0.1,GET,http://localhost:8000/,1548866183,,200
+f9e4aa,127.0.0.1,GET,http://localhost:8000/,1548866427,,200
+9ec7e4,127.0.0.1,GET,http://localhost:8000/,1548866433,,200
+98fe5f,127.0.0.1,GET,http://localhost:8000/news/why-asteroids-taste-like-bacon,1548866819,873fb7,200
+873fb7,127.0.0.1,GET,http://localhost:8000/news/why-asteroids-taste-like-bacon,1548866820,,500
+d7bc60,127.0.0.1,GET,http://localhost:8000/news/why-asteroids-taste-like-bacon,1548866873,,200
+3bbe94,127.0.0.1,GET,http://localhost:8000/news/why-asteroids-taste-like-bacon,1548866974,,200
