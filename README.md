@@ -68,3 +68,13 @@ php bin/console make:entity --regenerate App # to create setters and getters
 ./bin/console doctrine:migration:status # to see the migration status
 
 ```
+
+## Symfony MakerBundle
+
+composer require symfony/maker-bundle --dev # how to install
+
+php bin/console list make # lists all the make commands
+
+php ./bin/console make:controller NAMEOFCONTROLLER # create a new controller
+
+
