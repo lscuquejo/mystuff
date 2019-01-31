@@ -15,7 +15,8 @@ rm -rf # delete recursive
 ```
 
 git add -A && git commit -m "intended commit " && git push  # add all commit & push
-git clone https://github.com/lscuquejo/mystuff.git  # download a new git repo, replace this url for any another git repo
+git clone https://github.com/lscuquejo/mystuff.git  # "download"
+a new git repo, replace this url for any another git repo
 git pull # download updates from the remote repo
 git add .  # add updated files
 git commit # little description of the Updates
@@ -48,7 +49,8 @@ composer create-project symfony/skeleton "Directory-Name" # creates symfony skel
 ## Doctrine Commands to create from an already created database
 ```
 
-php bin/console doctrine:mapping:import 'App\Entity' annotation --path=src/Entity # dont forget to configure your database in "config/packages/doctrine.yaml
+php bin/console doctrine:mapping:import 'App\Entity' annotation --path=src/Entity # dont
+forget to configure your database in "config/packages/doctrine.yaml
 
 php bin/console make:entity --regenerate App # to create setters and getters
 
@@ -61,7 +63,8 @@ php bin/console make:entity --regenerate App # to create setters and getters
 
 ? # when u want to know what field types exists
 
-./bin/console make:migration # to send that u just made with make:entity to a Brand New DataBase
+./bin/console make:migration # to send that u just made with make:entity 
+to a Brand New DataBase
 
 ./bin/console doctrine:migration:migrate # to execute the migration
 
@@ -70,6 +73,7 @@ php bin/console make:entity --regenerate App # to create setters and getters
 ```
 
 ## Symfony MakerBundle
+```
 
 composer require symfony/maker-bundle --dev # how to install
 
@@ -77,4 +81,4 @@ php bin/console list make # lists all the make commands
 
 php ./bin/console make:controller NAMEOFCONTROLLER # create a new controller
 
-
+```
