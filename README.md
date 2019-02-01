@@ -21,6 +21,7 @@ git pull # download updates from the remote repo
 git add .  # add updated files
 git commit # little description of the Updates
 git push   # send to the repo
+https://github.com/lscuquejo/mystuff/commit/{nameofcommit"lastline from push) # exemplo:https://github.com/lscuquejo/mystuff/commit/5d908d0 
 
 ```
 

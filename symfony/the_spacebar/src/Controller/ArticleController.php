@@ -9,6 +9,20 @@ use Symfony\Component\HttpFoundation\Response;
 
 class ArticleController extends AbstractController
 {
+
+    /**
+     * Currently unused:just showing a controller with a constructor!
+     */
+    private $isDebug;
+
+    public function __construct(bool $isDebug)
+    {
+
+        dump($isDebug);die;
+
+        $this->isDebug = $isDebug;
+    }
+
     /**
      * @Route("/", name="app_homepage")
      */
@@ -19,7 +33,7 @@ class ArticleController extends AbstractController
     /**
      * @Route("/news/{slug}", name="article_show")
      */
-    public function show($slug, MarkdownHelper $markdownHelper)
+    public function show($slug, MarkdownHelper $markdownHelper, boll $isDebug)
     {
         $comments = [
             'I ate a normal rock once. It did NOT taste like bacon!',
