@@ -72,7 +72,13 @@ to a Brand New DataBase
 ./bin/console doctrine:migration:status # to see the migration status
 
 ```
+## Doctrine Commands
+```
 
+php ./bin/console make:crud # create the controlers and twig templates 
+based on an entity
+
+```
 ## Symfony MakerBundle
 ```
 
