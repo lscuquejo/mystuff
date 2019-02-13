@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b2722b10-a4c6-4195-a751-cff98a74b334" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Old-Studying/study/Jogo do galvart/images/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Old-Studying/study/Jogo do galvart/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Old-Studying/study/Jogo do galvart/tales of thraneas.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/.env.dist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/.idea/mastering-doctrine-relations.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/bin/console" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/bin/phpunit" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/composer.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/config/bundles.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/config/packages/dev/easy_log_handler.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/config/packages/dev/monolog.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/config/packages/dev/routing.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/config/packages/dev/web_profiler.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/config/packages/doctrine.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/config/packages/doctrine_migrations.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/config/packages/framework.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/config/packages/httplug.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/config/packages/knp_markdown.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/config/packages/monolog.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/config/packages/nexy_slack.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/config/packages/prod/doctrine.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/config/packages/prod/monolog.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/config/packages/routing.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/config/packages/stof_doctrine_extensions.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/config/packages/test/framework.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/config/packages/test/monolog.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/config/packages/test/web_profiler.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/config/packages/translation.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/config/packages/twig.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/config/routes.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/config/routes/annotations.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/config/routes/dev/twig.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/config/routes/dev/web_profiler.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/config/services.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/config/services_dev.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/config/services_test.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/phpunit.xml.dist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/public/css/font-awesome.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/public/css/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/public/fonts/FontAwesome.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/public/fonts/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/public/fonts/fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/public/fonts/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/public/fonts/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/public/fonts/fontawesome-webfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/public/images/alien-profile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/public/images/asteroid.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/public/images/astronaut-profile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/public/images/lightspeed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/public/images/mercury.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/public/images/meteor-shower.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/public/images/space-ice.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/public/images/space-nav.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/public/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/public/js/article_show.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/src/Command/ArticleStatsCommand.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/src/Controller/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/src/Controller/ArticleAdminController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/src/Controller/ArticleController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/src/DataFixtures/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/src/DataFixtures/ArticleFixtures.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/src/DataFixtures/BaseFixture.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/src/Entity/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/src/Entity/Article.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/src/Entity/Comment.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/src/Helper/LoggerTrait.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/src/Kernel.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/src/Migrations/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/src/Migrations/Version20180413174059.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/src/Migrations/Version20180413174154.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/src/Migrations/Version20180414171443.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/src/Migrations/Version20180418130337.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/src/Migrations/Version20180418130730.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/src/Migrations/Version20190213121854.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/src/Migrations/Version20190213124043.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/src/Repository/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/src/Repository/ArticleRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/src/Repository/CommentRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/src/Service/MarkdownHelper.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/src/Service/SlackClient.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/src/Twig/AppExtension.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/symfony.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/templates/article/homepage.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/templates/article/show.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/templates/base.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/tests/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mastering-doctrine-relations/translations/.gitignore" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+  </component>
+  <component name="FileEditorManager">
+    <leaf />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="582" />
+    <option name="width" value="1269" />
+    <option name="height" value="555" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../services-config-and-environments" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b2722b10-a4c6-4195-a751-cff98a74b334" name="Default Changelist" comment="" />
+      <created>1550077101655</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1550077101655</updated>
+      <workItem from="1550077104505" duration="348000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="348000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="-2" width="1920" height="1082" extended-state="6" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2497332" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/Controller/ArticleController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="35" column="7" lean-forward="true" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
