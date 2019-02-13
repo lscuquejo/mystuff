@@ -89,3 +89,14 @@ php bin/console list make # lists all the make commands
 php ./bin/console make:controller NAMEOFCONTROLLER # create a new controller
 
 ```
+
+## Docker Commands ##
+```
+
+docker ps # Show running containers
+
+docker exec -it ID /bin/bash # how to access the terminal of a docker container
+
+exit # exit the container xD
+
+```
