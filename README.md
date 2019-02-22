@@ -37,6 +37,8 @@ mysql -u root -p # where root = user
 
 composer create-project symfony/skeleton "Directory-Name" # creates symfony skeleton.
 
+./bin/console server:run # runs symfony server
+
 ```
 
 ## Doctrine installation and update
@@ -90,7 +92,7 @@ php ./bin/console make:controller NAMEOFCONTROLLER # create a new controller
 
 ```
 
-## Docker Commands ##
+## Docker Commands
 ```
 
 docker ps # Show running containers
@@ -98,5 +100,14 @@ docker ps # Show running containers
 docker exec -it ID /bin/bash # how to access the terminal of a docker container
 
 exit # exit the container xD
+
+```
+
+## Usefull WebSites
+```
+
+https://www.php-fig.org/psr/ # WebSite that shows how to properlly organize your development stuff
+
+
 
 ```

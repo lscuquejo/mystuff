@@ -35,12 +35,13 @@ $getLines = $imagesArray->getLines();
 
       function del(myId){
 
-        if (confirm('Are you sure you want to Delete this photo')) {
+          if (confirm('Are you sure you want to Delete this photo')) {
 
-          document.getElementById('submitdel').value = myId;
-          document.getElementById('hiddenform').submit();
+              document.getElementById('submitdel').value = myId;
+              document.getElementById('hiddenform').submit();
 
         }
+
       };
 
     </script>
@@ -109,11 +110,11 @@ $getLines = $imagesArray->getLines();
                   <button type="submit" class="btn btn-primary">Upload</button>
                 </fieldset>
 
-                <?php 
-                
+                <?php
+                // if the object ImagesArray instantiates getErrorMsg and return something that is not null show and error
                 if ($imagesArray->getErrorMsg() != "")
                 {
-
+                    // function body
                 ?>
 
                 <div class='alert alert-danger' role='alert'>That is not an image or is not suported format(Png, Jpg or Jpeg)</div>;
@@ -183,7 +184,7 @@ $getLines = $imagesArray->getLines();
 
         <p class="float-left">
           <?php if ($getNextPage != 0) {?>
-          <a href="index.php?nextpage=<?php echo $getNextPage -$this->$GLOBALS["pagenum"];?>"><button type="button" class="btn btn-primary">Previous Page</button></a>
+          <a href="index.php?nextpage=<?php echo $getNextPage - $GLOBALS["pagenum"];?>"><button type="button" class="btn btn-primary">Previous Page</button></a>
           <?php  }  ?>
         </p>
 
