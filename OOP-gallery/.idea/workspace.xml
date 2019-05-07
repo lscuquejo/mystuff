@@ -2,9 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9320f47a-d1ff-4f54-9cd8-93ef3e482d30" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../PHP-Unit/start/tests/AppBundle/Entity/DinossaurTest.php" afterDir="false" />
-      <change beforePath="$USER_HOME$/Work/erp/docker/docker-compose.yml" beforeDir="false" afterPath="$USER_HOME$/Work/erp/docker/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PHP-Unit/start/src/AppBundle/Entity/Dinosaur.php" afterDir="false" />
+      <change beforePath="$USER_HOME$/Work/erp/.idea/erp.iml" beforeDir="false" afterPath="$USER_HOME$/Work/erp/.idea/erp.iml" afterDir="false" />
+      <change beforePath="$USER_HOME$/Work/erp/.idea/php.xml" beforeDir="false" afterPath="$USER_HOME$/Work/erp/.idea/php.xml" afterDir="false" />
+      <change beforePath="$USER_HOME$/Work/erp/.idea/workspace.xml" beforeDir="false" afterPath="$USER_HOME$/Work/erp/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$USER_HOME$/Work/erp/composer.json" beforeDir="false" afterPath="$USER_HOME$/Work/erp/composer.json" afterDir="false" />
+      <change beforePath="$USER_HOME$/Work/erp/composer.lock" beforeDir="false" afterPath="$USER_HOME$/Work/erp/composer.lock" afterDir="false" />
+      <change beforePath="$USER_HOME$/Work/erp/config/bundles.php" beforeDir="false" afterPath="$USER_HOME$/Work/erp/config/bundles.php" afterDir="false" />
+      <change beforePath="$USER_HOME$/Work/erp/src/Entity/Users.php" beforeDir="false" afterPath="$USER_HOME$/Work/erp/src/Entity/Users.php" afterDir="false" />
+      <change beforePath="$USER_HOME$/Work/erp/symfony.lock" beforeDir="false" afterPath="$USER_HOME$/Work/erp/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/OOP-gallery.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/OOP-gallery.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP-Unit/start/tests/AppBundle/Entity/DinossaurTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/../PHP-Unit/start/tests/AppBundle/Entity/DinossaurTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,49 +29,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../PHP-Unit/start/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="300">
-                <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
-              </first_editor>
-              <second_editor />
+        <entry file="file://$PROJECT_DIR$/../PHP-Unit/start/tests/AppBundle/Entity/DinossaurTest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+              <folding>
+                <element signature="e#40#70#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../PHP-Unit/start/tests/AppBundle/Entity/DinossaurTest.php">
+        <entry file="file://$PROJECT_DIR$/../PHP-Unit/start/src/AppBundle/Entity/Dinosaur.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../PHP-Unit/start/phpunit.xml.dist">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../PHP-Unit/start/app/config/parameters.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../PHP-Unit/start/bin/console">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="18" column="87" selection-start-line="18" selection-start-column="87" selection-end-line="18" selection-end-column="87" />
+            <state relative-caret-position="255">
+              <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="18" />
             </state>
           </provider>
         </entry>
@@ -88,8 +72,16 @@
       </list>
     </option>
   </component>
+  <component name="PhpDebugGeneral" max_simultaneous_connections="1" zd_debug_auto_detect_ide_hosts="false" zd_debug_configured_ide_host="192.168.168.26,127.0.0.1,10.254.254.254" />
   <component name="PhpServers">
-    <servers />
+    <servers>
+      <server host="localhost" id="f8767fa2-0279-4e82-a5cc-135eda390c5d" name="localhost" port="8080" use_path_mappings="true">
+        <path_mappings>
+          <mapping local-root="$USER_HOME$/mainApp/app" remote-root="/var/www/app" />
+          <mapping local-root="$PROJECT_DIR$/../SymfonyGallery/SymfonyGallery/public" remote-root="/var/www/app" />
+        </path_mappings>
+      </server>
+    </servers>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -111,11 +103,10 @@
       <path value="$PROJECT_DIR$/vendor/symfony/http-foundation" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1920" />
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="1920" />
-    <option name="height" value="992" />
+    <option name="width" value="1440" />
+    <option name="height" value="835" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -123,61 +114,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane" />
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="OOP-gallery" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="~/mystuff" type="442cc68d:ScopeViewTreeModel$RootNode" />
-            </path>
-            <path>
-              <item name="OOP-gallery" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="~/mystuff" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="PHP-Unit" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="OOP-gallery" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="~/mystuff" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="PHP-Unit" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="start" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="OOP-gallery" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="~/mystuff" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="PHP-Unit" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="start" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="tests" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="OOP-gallery" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="~/mystuff" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="PHP-Unit" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="start" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="tests" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="AppBundle" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="OOP-gallery" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="~/mystuff" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="PHP-Unit" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="start" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="tests" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="AppBundle" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Entity" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.PHP" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../PHP-Unit/start/src/AppBundle/Entity" />
       <recent name="$PROJECT_DIR$/../php-for-beginners-laracasts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -210,24 +157,24 @@
       <updated>1550593299686</updated>
       <workItem from="1550593302160" duration="5927000" />
       <workItem from="1550746836724" duration="2985000" />
-      <workItem from="1550833531611" duration="9269000" />
+      <workItem from="1550833531611" duration="12402000" />
+      <workItem from="1552999542573" duration="2000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18181000" />
+    <option name="totallyTimeSpent" value="21316000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1920" y="23" width="1920" height="977" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1440" height="835" extended-state="6" />
     <layout>
-      <window_info active="true" id="Project" order="0" visible="true" weight="0.19116081" />
+      <window_info active="true" id="Project" order="0" visible="true" weight="0.29399142" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3299435" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.31573159" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -235,7 +182,7 @@
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32916668" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.3286908" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -244,6 +191,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/../SymfonyGallery/SymfonyGallery/public/index.php</url>
+          <line>23</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/Downloads/config.php" />
@@ -319,51 +277,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/Image.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
-          <caret line="333" column="1" selection-start-line="333" selection-start-column="1" selection-end-line="333" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/ImageLoader.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
-          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/php.ini">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/MyPDO.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-317">
-          <caret column="5" selection-start-column="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="196" column="14" selection-start-line="196" selection-start-column="14" selection-end-line="196" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/deleter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Image.php" />
+    <entry file="file://$PROJECT_DIR$/lib/ImageLoader.php" />
+    <entry file="file://$PROJECT_DIR$/php.ini" />
+    <entry file="file://$PROJECT_DIR$/config.php" />
+    <entry file="file://$PROJECT_DIR$/lib/MyPDO.php" />
+    <entry file="file://$PROJECT_DIR$/index.php" />
+    <entry file="file://$PROJECT_DIR$/deleter.php" />
     <entry file="file://$USER_HOME$/Project/vendor/autoload.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -387,32 +307,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../PHP-Unit/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../PHP-Unit/README.md" />
     <entry file="file://$USER_HOME$/Project/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../PHP-Unit/start/bin/console">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="18" column="87" selection-start-line="18" selection-start-column="87" selection-end-line="18" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../PHP-Unit/start/app/config/parameters.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
@@ -429,14 +328,48 @@
     <entry file="file://$PROJECT_DIR$/../PHP-Unit/start/phpunit.xml.dist">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../PHP-Unit/start/app/config/parameters.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../PHP-Unit/start/bin/console">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="18" column="87" selection-start-line="18" selection-start-column="87" selection-end-line="18" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../SymfonyGallery/SymfonyGallery/public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="38" lean-forward="true" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
+          <folding>
+            <element signature="e#7#22#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../PHP-Unit/start/tests/AppBundle/Entity/DinossaurTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        <state relative-caret-position="285">
+          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+          <folding>
+            <element signature="e#40#70#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../PHP-Unit/start/src/AppBundle/Entity/Dinosaur.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="18" />
         </state>
       </provider>
     </entry>

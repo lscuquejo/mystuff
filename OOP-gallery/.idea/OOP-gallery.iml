@@ -24,5 +24,6 @@
     <orderEntry type="module" module-name="erp" />
     <orderEntry type="module" module-name="mystuff" />
     <orderEntry type="module" module-name="Project" />
+    <orderEntry type="module" module-name="mainApp" />
   </component>
 </module>

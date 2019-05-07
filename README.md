@@ -8,6 +8,7 @@ cd # to enter in a directory (Folder)
 ls # or dir to list files
 rm # delete
 rm -rf # delete recursive
+Sudo lsof -i -sTCP:LISTEN # ListUp all listen Ports
 
 ```
 
@@ -103,7 +104,7 @@ exit # exit the container xD
 
 ```
 
-## Usefull WebSites
+## Useful WebSites
 ```
 
 https://www.php-fig.org/psr/ # WebSite that shows how to properlly organize your development stuff
