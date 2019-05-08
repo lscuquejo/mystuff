@@ -2,7 +2,7 @@
 
 class Painter
 {
-    public function addShape($shape){
+    public function addShape(Circle $shape){
         return $shape->draw();
     }
 }

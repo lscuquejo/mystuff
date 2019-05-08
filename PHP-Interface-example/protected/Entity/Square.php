@@ -1,5 +1,5 @@
 <?php
-class Square
+class Square implements ShapeInterface
 {
     public function draw(){}
     public function color(){}
