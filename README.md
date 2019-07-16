@@ -24,6 +24,17 @@ git commit # little description of the Updates
 git push   # send to the repo
 https://github.com/lscuquejo/mystuff/commit/{nameofcommit"lastline from push) # exemplo:https://github.com/lscuquejo/mystuff/commit/5d908d0 
 
+
+!!! How to create a Git check out !!!
+
+git checkout -b nameofbranch # check out as the selected branch.
+add any new file or change some. # make any gitable updates.
+git add -A && git commit -m "intended commit " # adding git updates and commiting it.
+Then to push but the first time you MUST to
+
+git push --set-upstream origin nameofbranch
+
+!!! End Block !!!
 ```
 
 ## MYSQL

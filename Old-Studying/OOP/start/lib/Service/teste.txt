@@ -1,5 +1,0 @@
-battleManager
-asbas
-absdb
-asdbasdv
-xc
