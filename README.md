@@ -120,4 +120,6 @@ exit # exit the container xD
 
 https://www.php-fig.org/psr/ # WebSite that shows how to properlly organize your development stuff
 
+https://symfonycasts.com/screencast/symfony-security/serializer-api # How to use serializer/symfony
+
 ```
